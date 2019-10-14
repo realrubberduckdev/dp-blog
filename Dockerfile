@@ -1,8 +1,6 @@
 FROM node:12.11.1 AS builder
 WORKDIR /dpblog
 RUN npm i -g gatsby-cli
-RUN gatsby --version
-
 COPY package*.json ./
 RUN npm install
 COPY . .
