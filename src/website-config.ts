@@ -49,7 +49,7 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: 'rubberduckdev',
+  title: 'RubberDuckDev',
   description: 'Blog posts by Dushyant Priyadarshee.',
   coverImage: 'img/blog-cover.jpg',
   logo: 'img/rubber-duck-logo.png',
