@@ -4,9 +4,7 @@ title: DDD14 Reading 2019
 image: img/ddd-splash.png
 author: Dushyant
 date: 2019-10-13T16:00:00.000Z
-tags:
-  - Conference
-  - Talk
+tags: ["Conference", "All"]
 draft: false
 ---
 # Developer! Developer! Developer! Day
