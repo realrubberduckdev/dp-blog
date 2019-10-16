@@ -52,7 +52,7 @@ const config: WebsiteConfig = {
   title: 'rubberduckdev',
   description: 'Blog posts by Dushyant Priyadarshee.',
   coverImage: 'img/blog-cover.jpg',
-  logo: 'img/ghost-logo.png',
+  logo: 'img/rubber-duck-logo.png',
   lang: 'en',
   siteUrl: 'https://rubberduckdev.com',
   facebook: 'https://www.facebook.com/dpriyadarshee',
