@@ -7,6 +7,7 @@ date: 2019-10-13T16:00:00.000Z
 tags:
   - Conference
   - Talk
+draft: false
 ---
 # Developer! Developer! Developer! Day
 The DDD14 held at Reading on 12th Oct 2019 was my first ever experience of [Developer Developer Developer](https://developerdeveloperdeveloper.com/Home/About) community event. It is a fantastic event and I have been missing out by not attending it in the past. The quality of speakers and the content of presentation is amazing, add to it the great organization and location (it was at Microsoft UK HQ at Thames Valley Park). If you are a member of the software community, definitely do not miss out on this great event.
