@@ -31,7 +31,7 @@ By [Rob Miles](http://www.twitter.com/@robmiles).
 
 This talk is actually about IoT devices, use of Microsoft Azure technologies as well as measuring air quality, well just to start with, but was a whole lot more. It was clear how passionate Rob is towards his projects and technology in general and it showed in his presentation when he insisted on trying hobby projects is the best way to learn.
 
-From the air quality measurement side of things, Rob did come with some amazing gadgets and a classy top hat (with air quality sensors on it). To begin with, he demonstrated connecting a device using [Message Queue Telemetry Transport] (https://en.wikipedia.org/wiki/MQTT) with a simplified architecture as below.
+From the air quality measurement side of things, Rob did come with some amazing gadgets and a classy top hat (with air quality sensors on it). To begin with, he demonstrated connecting a device using [Message Queue Telemetry Transport](https://en.wikipedia.org/wiki/MQTT) with a simplified architecture as below.
 
 ![MQTT Air Quality Device Architecture](./img/mqtt-air-quality.png)
 
