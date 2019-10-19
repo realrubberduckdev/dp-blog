@@ -63,8 +63,7 @@ The way it works is you take the exam on your chosen laptop and someone (or more
 
 This is ok if you are taking the exam from an office meeting room where you are certain that nobody will knock or come in. I took the exam from my home office room, which was fine disruption wise, but it felt like letting a stranger(s) into my room. Next exam, I might take it from a office room or from exam center.
 
-This tweet thread sums up the inconveniences faced while using BYOD exams. But having said so, I can totally see the benefit of this for people who may not be able to go to the exam center.
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One thing I cannot stand is <a href="https://twitter.com/PearsonVUE?ref_src=twsrc%5Etfw">@PearsonVUE</a> and the fact Microsoft use them for the exams - they&#39;re impossible to deal with.</p>&mdash; Gregor Suttie - Azure Greg 🏴󠁧󠁢󠁳󠁣󠁴󠁿 (@gregor_suttie) <a href="https://twitter.com/gregor_suttie/status/1185170236682706944?ref_src=twsrc%5Etfw">October 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+Having said so, I can totally see the benefit of BYOD for people who may not be able to go to the exam center. It needs further improvements, but I do congratulate MeasureUp on implementing it.
 
 # Results
 The exam results are generated immediate after the exam and it includes marks scored with a further breakdown of performance.
