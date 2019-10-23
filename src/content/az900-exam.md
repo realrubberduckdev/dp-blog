@@ -30,7 +30,7 @@ As it stands, the AZ-900 exam is optional if you aim at a certification such as 
 The following are the tips on how to prepare for the AZ-900 exam. Based on what I did. As I progress towards more difficult areas of exams, I might adapt these and will do future blog posts about them.
 
 ## Studying
-The initial 'must-do', in my opinion, is to start with the self-paced interactive learning path as it would be recommended on the exam page. In the case of AZ-900, it is the [Azure Fundamentals Learning Path](https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/). This is a [gamified](https://en.wikipedia.org/wiki/Gamification) learning path, which got me interested for a few days. And I learnt quite a bit, even though I started with a bias that it all might be easy. The fundamentals have some really exciting points which are a must know if you are aiming to be an expert in Azure. Take the concept of Azure Government for instance or why Azure Germany is unique non-government cloud or availability set vs availability zones. I had no idea about these. In case you do not too, do follow the learning path.
+The initial 'must-do', in my opinion, is to start with the self-paced interactive learning path as it would be recommended on the exam page. In the case of AZ-900, it is the [Azure Fundamentals Learning Path](https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/). This is a [gamified](https://en.wikipedia.org/wiki/Gamification) learning path, which got me interested for a few days. And I learnt quite a bit, even though I started with a bias that it all might be easy. The fundamentals have some really exciting points which are a must know if you are aiming to be an expert in Azure. Take the concept of Azure Government for instance or why Azure Germany is unique non-government cloud or availability sets vs availability zones. I had no idea about these. In case you do not too, do follow the learning path.
 
 I did search for related topics on [Pluralsight](https://pluralsight.com) but given this is a fundamentals exam, I didn't find any directly related learning paths on Pluralsight. Will continue checking for future exams and will add to posts then.
 
@@ -49,12 +49,12 @@ The overall idea of the certification exercise is continuous learning and gettin
 I am lucky to be working at Oxford which means I get to attend events such as [.Net Oxford](https://www.dotnetoxford.com), [Azure Oxford](https://www.meetup.com/Azure-Oxford/) or [DevOps Oxford](https://www.meetup.com/devopsoxford/). These may not always be doing something directly related to AZ-900 or even Azure. But one of the techniques we all use consciously or subconsciously is taking an educated guess while answering. This is where stimulating our brain comes in which in turn helps when we end up guessing applying certain method, process or logic which we can pick up from like-minded people.
 
 # Taking the exam
-Having done all the preparation, taking the exam was less stressful than I have thought. As far as I know, there are two ways to take the exam.
+Having done all the preparation, taking the exam was less stressful than I'd have thought. As far as I know, there are two ways to take the exam.
 
 ## Exam Center
-When you schedule the exam, I chose Pearson VUE, it leads you through a form to select an exam centre and timing as per the availability. Then on the scheduled time or normally 15mins before your exam, you reach the venue, go through an initial test exam and then take your exam.
+When you schedule the exam, it leads you through a form to select an exam centre and timing as per the availability. Then on the scheduled time or normally 15mins before your exam, you reach the venue, go through an initial test exam and then take your exam. While scheduling exam I had chosen Pearson VUE, which is what most of us will choose. The other option is Certiport and you should choose that if you are attending a school or are an instructor.
 
-I have also taken [Exam 483: Programming in C#](https://www.youracclaim.com/badges/e73e350b-d77e-402a-9575-6e37d4921e8f/public_url) in the past at the exam in Reading, Berkshire, UK. So this time around, I thought it would be good to try out the second option, BYOD.
+I have also taken [Exam 483: Programming in C#](https://www.youracclaim.com/badges/e73e350b-d77e-402a-9575-6e37d4921e8f/public_url) in the past at the exam centre in Reading, Berkshire, UK. So this time around, I thought it would be good to try out the second option, BYOD.
 
 ## Proctored Exam: BYOD
 BYOD (bring your own device) proctored exam is new to me and hence I chose this option for my AZ-900 exam.
