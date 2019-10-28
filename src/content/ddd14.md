@@ -24,7 +24,8 @@ Tossing: creating situations when votes cast can be discarded as invalid.
 
 Although the extra exciting bit provided was the real world examples used by Gary to show how some parties are currently doing it. He goes to use the audience to participate in something which we would normally wouldn't agree to do, to prove how influence works.
 
-Overall, both scary and exciting and the full video is available on [Youtube - How to Steal an Election - Gary Short](https://youtu.be/32m8luvA9Qg).
+Overall, both scary and exciting and the full video is available on Youtube.
+`video: https://youtu.be/32m8luvA9Qg`
 
 # Air Quality, Azure Functions and Spider Eggs
 By [Rob Miles](http://www.twitter.com/@robmiles).
