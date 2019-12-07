@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Azure DevOps Flaky Test Identification & Reporting
+title: Azure DevOps flaky test identification & reporting
 image: img/flaky-test-splash.png
 author: Dushyant
 date: 2019-12-11T11:00:00.000Z
@@ -16,7 +16,7 @@ We will agree that flaky tests make software development a challenging affair. S
 Although we find it frustrating, it is inevitable that as a code base grows and becomes more complicated, we get some tests which are flaky. Be it because of simple reasons as bad setup/teardown or dependency on third party components to difficult to avoid situations such as infrastructure or concurrency.
 
 ## Shoutout to Azure advent calendar
-This blog post is published as part of [Azure advent calendar](https://azureadventcalendar.com/). I would highly recommend a visit to the advent calendar and check out the other amazing topics published there.
+This blog post is published as part of [Azure advent calendar](https://azureadventcalendar.com/). I would highly recommend a visit to the advent calendar and check out the other amazing topics published there. All videos on the calendar are at [Azure Advent Calendar Youtube channel](https://www.youtube.com/channel/UCJL9wCcmeMBbah4J0uOWIPg)
 
 # Flaky test detection on Azure DevOps
 
