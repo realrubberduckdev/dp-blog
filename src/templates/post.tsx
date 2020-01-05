@@ -14,6 +14,7 @@ import PostCard from '../components/PostCard';
 import PostContent from '../components/PostContent';
 import PostFullFooter from '../components/PostFullFooter';
 import PostFullFooterRight from '../components/PostFullFooterRight';
+import DisqusComments from '../components/DisqusComments';
 import ReadNextCard from '../components/ReadNextCard';
 import Subscribe from '../components/subscribe/Subscribe';
 import Wrapper from '../components/Wrapper';
@@ -320,6 +321,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
             </ReadNextFeed>
           </div>
         </aside>
+        <DisqusComments postTitle={post.frontmatter.title} postURL={'config.siteUrl + props.pathContext.slug + test'} />
         <Footer />
       </Wrapper>
     </IndexLayout>
