@@ -1,7 +1,7 @@
 import React from 'react';
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
-const DisqusComments = props => {
+const DisqusComments = (props: any) => {
   let disqusConfig = {
     url: props.postURL,
     identifier: 0,
