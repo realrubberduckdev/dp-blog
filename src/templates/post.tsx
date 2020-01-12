@@ -321,7 +321,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
             </ReadNextFeed>
           </div>
         </aside>
-        <DisqusComments postTitle={post.frontmatter.title} postURL={'config.siteUrl + props.pathContext.slug + test'} />
+        <DisqusComments postTitle={post.frontmatter.title} postURL={config.siteUrl + props.pathContext.slug} />
         <Footer />
       </Wrapper>
     </IndexLayout>

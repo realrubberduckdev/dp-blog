@@ -4,7 +4,7 @@ import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 const DisqusComments = (props: any) => {
   let disqusConfig = {
     url: props.postURL,
-    identifier: 0,
+    identifier: props.postURL,
     title: props.postTitle,
   }
   return (
