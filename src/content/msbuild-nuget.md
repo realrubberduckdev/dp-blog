@@ -10,7 +10,7 @@ draft: false
 # Introduction
 Among many other advantages of using sdk style csproj in our solutions, to be able to generate nupkg without a nuspec file is a major one. This is described in [Microsoft documentation - Create a NuGet package using MSBuild](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-msbuild)
 
-I agree that it is a big step towards being to use msbuild for both build to generate artifacts such as exe, dll and now nupkg. But the issues lies with the fact that the msbuild/csproj always assumes that it is a class library, thereby always adding a dll file to the nupkg.
+I agree that it is a big step towards being able to use msbuild to generate artifacts such as exe, dll and now nupkg. But the issues lies with the fact that the msbuild/csproj always assumes that it is a class library, thereby always adding a dll file to the nupkg.
 
 # Issue in detail
 
