@@ -14,6 +14,8 @@ I agree that it is a big step towards being to use msbuild for both build to gen
 
 # Issue in detail
 
+So the case we have is, we can generate a specific folder structure in a nupkg using nuspec file. And we hit issues when we try the same using a csproj file, in a bid to remove nuspec file usage.
+
 ## The case - RubberDuckDev.AfterBuild.nupkg
 The overall plan of this nupkg is to just keep a targets file in build folder.
 So the folder structure is as follows:
@@ -24,7 +26,7 @@ RubberDuckDev.AfterBuild.nupkg
               RubberDuckDev.AfterBuild.targets
 ```
 
-So let us assume that we have nuspec file and we do not use msbuild. In such a case we will follow [Run nuget pack to generate the .nupkg file](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#run-nuget-pack-to-generate-the-nupkg-file) and us a nuspec file RubberDuckDev.AfterBuild.nuspec with the following contents.
+So let us assume that we have nuspec file and we do not use msbuild. In such a case we will follow [Run nuget pack to generate the .nupkg file](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#run-nuget-pack-to-generate-the-nupkg-file) and use a nuspec file RubberDuckDev.AfterBuild.nuspec with the following contents.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
