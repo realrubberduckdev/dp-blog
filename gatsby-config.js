@@ -10,6 +10,12 @@ module.exports = {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `rubberduckdev`
+      }
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     {
