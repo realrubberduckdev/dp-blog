@@ -27,7 +27,7 @@ If you have got the same issue as [Fry](https://en.wikipedia.org/wiki/Philip_J._
 `video: https://youtu.be/m2KSh0JrM-Q`
 
 # Conclusion
-If you have any thoughts or comments please do get in touch with me on twitter [@rubberduckdev](https://twitter.com/rubberduckdev).
+If you have any thoughts or comments please do get in touch with me on twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the disqus plugin below.
 
 ### Credits
 Flaky test banner by [Bailey McGinn](https://baileymcginn.com/about)

@@ -11,7 +11,7 @@ const DisqusComments = (props: any) => {
     <>
       <h1>{props.postTitle}</h1>
       <CommentCount config={disqusConfig} placeholder={'...'} />
-      /* Post Contents */
+      {/* Post Contents */}
       <Disqus config={disqusConfig} />
     </>
   )
