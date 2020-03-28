@@ -37,8 +37,11 @@ const About: React.FC = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-                Software Engineer with passion for Agile Practices, DevOps, Microsoft Technologies and all things Azure.
+                Hi I am Dushyant Priyadarshee.
+                Software Engineer with passion for agile practices, DevOps, Microsoft technologies and all things Azure.
                 Currently learning Gatsby, Node.js and React.js. Hence this blog.
+
+                You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
               <br></br><br></br>
               <h6>Recent certifications</h6>
@@ -52,6 +55,10 @@ const About: React.FC = () => (
 
               <a href='https://www.youracclaim.com/badges/0623b8c3-d7e0-421f-b137-ee2f613dbdb4/public_url' target="_blank">
                 Exam AZ900: Microsoft Certified: Azure Fundamentals
+              </a><br></br>
+
+              <a href='https://www.youracclaim.com/users/dushyant-priyadarshee/badges' target="_blank">
+                Further list of Microsoft certifications.
               </a><br></br>
 
               </p>
