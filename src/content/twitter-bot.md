@@ -44,7 +44,7 @@ ___
 * The `Retweet` action will need to know the tweet id to be retweeted and this will be obtained from the trigger. Search `Tweet id` in dynamic content and select it. ![Tweet posted trigger](./img/twitter-bot/tweet-id.png)
 ___
 
-That's it. Now save and your Twitter bot is ready. This bot will retweet any tweet by Twitter handle @rubberduckdev or any tweet that contains any of the keywords listed above. Although by design, this will only trigger once per hour (see limitations subtopic) and hence you may not see retweets straightaway. See the logic app run history for a detailed log.
+That's it. Now save and our Twitter bot is ready. This bot will retweet any tweet by Twitter handle @rubberduckdev or any tweet that contains any of the keywords listed above. Although by design, this will only trigger once per hour (see limitations subtopic) and hence you may not see retweets straightaway. See the logic app run history for a detailed log.
  
 
 ## Limitations
