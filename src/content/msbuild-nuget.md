@@ -92,6 +92,15 @@ RubberDuckDev.AfterBuild.nupkg
 This create an unnecessary addition to our nupkg the RubberDuckDev.AfterBuild.dll file.
 
 # The solution - nuspec
+
+## IncludeBuildOutput - Update on 18th Apr 2020
+Recently I found out that nuspec is not necessarily the only solution. We can also [disable inclusion of build output in nupkg](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#output-assemblies) by adding the following to sdk style csproj.
+
+```
+<IncludeBuildOutput>false</IncludeBuildOutput>
+```
+
+## Solution using nuspec
 The only way I could get it to work is by using a nuspec and csproj together. That is to use msbuild to generate the required folder structure in the nupkg.
 
 So the csproj finally looks like:
