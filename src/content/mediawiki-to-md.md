@@ -37,7 +37,9 @@ Steps:
 1. Log into your mediawiki instance
 1. Find the PHP file .../maintenance/dumpBackup.php and your ../LocalSettings.php file. Then try:
 
-```php .../maintenance/dumpBackup.php --conf .../LocalSettings.php --full > mediawiki_dump.xml```
+```
+php .../maintenance/dumpBackup.php --conf .../LocalSettings.php --full > mediawiki_dump.xml
+```
 
 Note we can use parameters --include-files --uploads to ensure the exported XML includes all the images and other files. But in our example, this currently doesn't work.
 
@@ -80,9 +82,14 @@ As you can see, this docker files gets [Pandoc docker image](https://hub.docker.
 The steps to do the conversion now are:
 
 1. Copy the `mediawiki_dump.xml` to the same folder as the docker file.
-1. Build the image using the following command: `docker build -t MediaWiki2MD .`
+1. Build the image using the following command: 
+```
+docker build -t MediaWiki2MD .
+```
 1. After building the docker image, we run it with a volume mapped for accessing the output files.
-`docker run -v ./output/:/src/output MediaWiki2MD sh -c "php convert.php --filename=mediawiki_dump.xml --output=./output"`
+```
+docker run -v ./output/:/src/output MediaWiki2MD sh -c "php convert.php --filename=mediawiki_dump.xml --output=./output"
+```
 Note: The convert.php file is at [mediawiki-to-markdown/convert.php](https://github.com/realrubberduckdev/mediawiki-to-markdown/blob/4ebf945e68984270c820e8fe6a892e0acfc6875d/convert.php)
 
 This should generate the MD files in the output folder.
