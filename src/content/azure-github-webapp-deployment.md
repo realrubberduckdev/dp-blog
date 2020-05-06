@@ -186,6 +186,30 @@ stages:
 
 This YAML file stays in the git repo and triggers Azure pipelines upon change to master. Team members can test the changes on the staging URL before approving, thereby swapping the slots and deploying changes to production.
 
+## Deployment using docker
+Another method of automated deployment is using docker settings on Azure app service. For this we will need a docker image, as shown below. This is the [docker file](https://github.com/realrubberduckdev/dp-blog/blob/7cad56a0034efbf0d39f0be0ba8470c281674e97/Dockerfile) used to deploy this blogging website.
+
+```
+FROM node:12.11.1 AS builder
+WORKDIR /dpblog
+RUN npm i -g gatsby-cli
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN gatsby build
+
+FROM gatsbyjs/gatsby:latest
+COPY --from=builder /dpblog/public/ /pub
+```
+
+This is a multi stage docker file and the first builder stage is used to build the static [gatsby](https://www.gatsbyjs.org/) website. Followed by the second stage, where it gets the latest gatsby docker image, which essentially has [nginx](https://www.nginx.com/) and hosts the static website by copying it across from builder.
+
+This will need Azure pipelines again to do the build and deployment.
+
+![architecture diagram](./img/azure-github-webapp-deployment/docker-diagram.PNG)
+
+As the architecture diagram shows, we will need build a new image with the new static contents. Azure pipelines can build this and push to azure container registry. Then either after validation or approval gates or automated deployment, Azure pipelines can then update the Azure app service docker settings to pick up the new docker image.
+
 # Conclusion
 Azure, Azure pipelines, Github work seamlessly in these scenarios of web deployment. We can keep all relevant info from code, infrastructure creation to pipeline and more on Git. Making it one "source of truth".
 
