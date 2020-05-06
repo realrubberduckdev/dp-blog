@@ -9,7 +9,7 @@ draft: false
 ---
 # Introduction
 ## GitOps
-Have you heard of GitOps yet? I have come across this term on multiple [Software Engineering Daily](https://softwareengineeringdaily.com/) podcasts. And it is amazing how it fits into the idea of robust infrastructure and seamless deployment with infrastructure as code. One of the main essence of GitOps, as far as I understand and also what [Atlassian](https://www.atlassian.com/git/tutorials/gitops) has emphasized is that Git effectively can become one “source of truth”. Meaning for both code and infrastructure. I like this idea and point of this post is about reflecting Git changes on web deployments, not so much of infrastructure though in this post.
+Have you heard of GitOps yet? I have come across this term on multiple [Software Engineering Daily](https://softwareengineeringdaily.com/) podcasts. And it is amazing how it fits into the idea of robust infrastructure and seamless deployment with infrastructure as code. One of the main essence of GitOps, as far as I understand and also what [Atlassian](https://www.atlassian.com/git/tutorials/gitops) has emphasized is that Git effectively can become one “source of truth”. Meaning for both code and infrastructure. I like this idea and point of this post is about reflecting Git changes on web deployments.
 
 # Deploying web app from GitHub to Azure
 ## Pre-requisites
@@ -60,6 +60,12 @@ Set-AzResource -PropertyObject $PropertiesObject -ResourceGroupName $resourceGro
 -ResourceType Microsoft.Web/sites/SourceControls `
 -ResourceName $webappname/web -ApiVersion 2019-08-01 -Force
 ```
+Essentially the script does the following:
+- Securely connect to Azure
+- Create resource group if needed
+- Create Azure app service
+- Create Azure web app
+- Set web app deployment to Github repo master branch
 
 This is just one-time deployment as you may see the master branch is always synced with deployment. Any commits and changes to the web app will be deployed upon merge/push to master.
 Hence it is a continuous deployment model.
@@ -119,6 +125,14 @@ Set-AzResource -PropertyObject $PropertiesObject -ResourceGroupName $resourceGro
 Switch-AzWebAppSlot -Name $webappname -ResourceGroupName $resourceGroupName `
 -SourceSlotName staging -DestinationSlotName production
 ```
+Essentially the script does the following:
+- Securely connect to Azure
+- Create resource group if needed
+- Create Azure app service
+- Create Azure web app
+- Create web deployment slots
+- Set web app staging slot deployment to Github repo master branch
+- Finally switch the slots so the current state of master becomes available in production slot
 
 So now that deployment is done, you can go ahead make a change in master. Did you notice that your change is not reflected in the web pages? Let me explain why. The script configures the staging slot to be synced with master and not the production. That is why the script swaps slots at the end. Meaning we need to do the same when master gets new changes and this is where we can do magic using [Azure DevOps](https://azure.microsoft.com/en-gb/services/devops/).
 
