@@ -127,12 +127,12 @@ Switch-AzWebAppSlot -Name $webappname -ResourceGroupName $resourceGroupName `
 ```
 Essentially the script does the following:
 - Securely connect to Azure
-- Create resource group if needed
+- Create a resource group if needed
 - Create Azure app service
-- Create Azure web app
+- Create an Azure web app
 - Create web deployment slots
 - Set web app staging slot deployment to Github repo master branch
-- Finally switch the slots so the current state of master becomes available in production slot
+- Finally switch the slots so the current state of master becomes available in the production slot
 
 So now that deployment is done, you can go ahead make a change in master. Did you notice that your change is not reflected in the web pages? Let me explain why. The script configures the staging slot to be synced with master and not the production. That is why the script swaps slots at the end. Meaning we need to do the same when master gets new changes and this is where we can do magic using [Azure DevOps](https://azure.microsoft.com/en-gb/services/devops/).
 
@@ -187,7 +187,7 @@ stages:
 This YAML file stays in the git repo and triggers Azure pipelines upon change to master. Team members can test the changes on the staging URL before approving, thereby swapping the slots and deploying changes to production.
 
 ## Deployment using docker
-Another method of automated deployment is using docker settings on Azure app service. For this we will need a docker image, as shown below. This is the [docker file](https://github.com/realrubberduckdev/dp-blog/blob/7cad56a0034efbf0d39f0be0ba8470c281674e97/Dockerfile) used to deploy this blogging website.
+Another method of automated deployment is using docker settings on Azure app service. For this, we will need a docker image, as shown below. This is the [docker file](https://github.com/realrubberduckdev/dp-blog/blob/7cad56a0034efbf0d39f0be0ba8470c281674e97/Dockerfile) used to deploy this blogging website.
 
 ```
 FROM node:12.11.1 AS builder
@@ -202,13 +202,13 @@ FROM gatsbyjs/gatsby:latest
 COPY --from=builder /dpblog/public/ /pub
 ```
 
-This is a multi stage docker file and the first builder stage is used to build the static [gatsby](https://www.gatsbyjs.org/) website. Followed by the second stage, where it gets the latest gatsby docker image, which essentially has [nginx](https://www.nginx.com/) and hosts the static website by copying it across from builder.
+This is a multi-stage docker file and the first builder stage is used to build the static [gatsby](https://www.gatsbyjs.org/) website. Followed by the second stage, where it gets the latest gatsby docker image, which essentially has [nginx](https://www.nginx.com/) and hosts the static website by copying it across from the builder.
 
 This will need Azure pipelines again to do the build and deployment.
 
 ![architecture diagram](./img/azure-github-webapp-deployment/docker-diagram.PNG)
 
-As the architecture diagram shows, we will need build a new image with the new static contents. Azure pipelines can build this and push to azure container registry. Then either after validation or approval gates or automated deployment, Azure pipelines can then update the Azure app service docker settings to pick up the new docker image.
+As the architecture diagram shows, we will need to build a new image with the new static contents. Azure pipelines can build this and push to azure container registry. Then either after validation or approval gates or automated deployment, Azure pipelines can then update the Azure app service docker settings to pick up the new docker image.
 
 # Conclusion
 Azure, Azure pipelines, Github work seamlessly in these scenarios of web deployment. We can keep all relevant info from code, infrastructure creation to pipeline and more on Git. Making it one "source of truth".
