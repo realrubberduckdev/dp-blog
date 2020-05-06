@@ -7,8 +7,7 @@ date: 2020-05-5T19:00:00.000Z
 tags: ["Azure", "All"]
 draft: false
 ---
-# Introduction
-## GitOps
+# GitOps
 Have you heard of GitOps yet? I have come across this term on multiple [Software Engineering Daily](https://softwareengineeringdaily.com/) podcasts. And it is amazing how it fits into the idea of robust infrastructure and seamless deployment with infrastructure as code. One of the main essence of GitOps, as far as I understand and also what [Atlassian](https://www.atlassian.com/git/tutorials/gitops) has emphasized is that Git effectively can become one “source of truth”. Meaning for both code and infrastructure. I like this idea and point of this post is about reflecting Git changes on web deployments.
 
 # Deploying web app from GitHub to Azure
@@ -215,6 +214,3 @@ Azure, Azure pipelines, Github work seamlessly in these scenarios of web deploym
 
 ## Github
 For full code visit [realrubberduckdev/app-service-web-dotnet-get-started](https://github.com/realrubberduckdev/app-service-web-dotnet-get-started).
-
-### Credits
-Banner from [activeviam](https://www.activeviam.com/blog/wp-content/uploads/2017/07/github-microsoft-azure.jpg)
