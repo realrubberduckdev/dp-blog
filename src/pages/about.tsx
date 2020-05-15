@@ -8,6 +8,7 @@ import { css } from '@emotion/core';
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
+import YourClaimBadge from '../components/YourAcclaimBadge';
 import Helmet from 'react-helmet';
 
 const PageTemplate = css`
@@ -15,6 +16,14 @@ const PageTemplate = css`
     background: #fff;
     padding-bottom: 4vw;
   }
+
+  img {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
 `;
 
 const About: React.FC = () => (
@@ -43,24 +52,28 @@ const About: React.FC = () => (
 
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
-              <br></br><br></br>
-              <h6>Recent certifications</h6>
-              <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
-                Certified Scrum Master
-              </a><br></br>
-
-              <a href='https://www.youracclaim.com/badges/e73e350b-d77e-402a-9575-6e37d4921e8f/public_url' target="_blank">
-                Exam 483: Programming in C#
-              </a><br></br>
-
-              <a href='https://www.youracclaim.com/badges/0623b8c3-d7e0-421f-b137-ee2f613dbdb4/public_url' target="_blank">
-                Exam AZ900: Microsoft Certified: Azure Fundamentals
-              </a><br></br>
-
-              <a href='https://www.youracclaim.com/users/dushyant-priyadarshee/badges' target="_blank">
-                Further list of Microsoft certifications.
-              </a><br></br>
-
+                <br/><br/>
+                <center>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th colSpan="4">
+                      <center>Certifications</center>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td><YourClaimBadge badgeId='1505e021-7708-4596-9ac9-87cd05ba927d' /></td>
+                    <td><YourClaimBadge badgeId='0623b8c3-d7e0-421f-b137-ee2f613dbdb4' /></td>
+                    <td><YourClaimBadge badgeId='e73e350b-d77e-402a-9575-6e37d4921e8f' /></td>
+                    <td>
+                      <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
+                        <img src="https://www.avantastech.com/wp-content/uploads/2019/12/csm-certified-scrum-alliance.png"
+                          alt="Certified Scrum Master" width="150" height="70" />
+                          Certified Scrum Master
+                      </a>
+                    </td>
+                  </tr>
+              </table>
+              </center>
               </p>
             </div>
           </PostFullContent>
