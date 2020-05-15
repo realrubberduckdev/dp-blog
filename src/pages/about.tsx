@@ -16,6 +16,13 @@ const PageTemplate = css`
     background: #fff;
     padding-bottom: 4vw;
   }
+
+  img {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
 `;
 
 const About: React.FC = () => (
@@ -46,12 +53,20 @@ const About: React.FC = () => (
 
               <br></br><br></br>
               <h6>Certifications</h6>
-              <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
-                Certified Scrum Master
-              </a><br></br>
+              <br/>
+              <h6>Microsoft</h6>
+              <br/>
               <YourClaimBadge badgeId='1505e021-7708-4596-9ac9-87cd05ba927d' />
               <YourClaimBadge badgeId='0623b8c3-d7e0-421f-b137-ee2f613dbdb4' />
               <YourClaimBadge badgeId='e73e350b-d77e-402a-9575-6e37d4921e8f' />
+              <br/>
+              <h6>Scrum Alliance</h6>
+              <br/>
+              <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
+                <img src="https://www.avantastech.com/wp-content/uploads/2019/12/csm-certified-scrum-alliance.png"
+                alt="Certified Scrum Master" width="150" height="70" />
+              </a>
+              <br/>
               </p>
             </div>
           </PostFullContent>
