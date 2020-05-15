@@ -8,6 +8,7 @@ import { css } from '@emotion/core';
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
+import YourClaimBadge from '../components/YourAcclaimBadge';
 import Helmet from 'react-helmet';
 
 const PageTemplate = css`
@@ -44,23 +45,13 @@ const About: React.FC = () => (
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
               <br></br><br></br>
-              <h6>Recent certifications</h6>
+              <h6>Certifications</h6>
               <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
                 Certified Scrum Master
               </a><br></br>
-
-              <a href='https://www.youracclaim.com/badges/e73e350b-d77e-402a-9575-6e37d4921e8f/public_url' target="_blank">
-                Exam 483: Programming in C#
-              </a><br></br>
-
-              <a href='https://www.youracclaim.com/badges/0623b8c3-d7e0-421f-b137-ee2f613dbdb4/public_url' target="_blank">
-                Exam AZ900: Microsoft Certified: Azure Fundamentals
-              </a><br></br>
-
-              <a href='https://www.youracclaim.com/users/dushyant-priyadarshee/badges' target="_blank">
-                Further list of Microsoft certifications.
-              </a><br></br>
-
+              <YourClaimBadge badgeId='1505e021-7708-4596-9ac9-87cd05ba927d' />
+              <YourClaimBadge badgeId='0623b8c3-d7e0-421f-b137-ee2f613dbdb4' />
+              <YourClaimBadge badgeId='e73e350b-d77e-402a-9575-6e37d4921e8f' />
               </p>
             </div>
           </PostFullContent>
