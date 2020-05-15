@@ -53,7 +53,6 @@ const About: React.FC = () => (
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
                 <br/><br/>
-                <h6>Certifications</h6>
                 <center>
                 <table cellspacing="0" cellpadding="0">
                   <tr>
