@@ -61,6 +61,7 @@ const About: React.FC = () => (
                     </th>
                   </tr>
                   <tr>
+                    <td><YourClaimBadge badgeId='97ad8520-7195-46f5-8cfd-283c150e9057' /></td>
                     <td><YourClaimBadge badgeId='1505e021-7708-4596-9ac9-87cd05ba927d' /></td>
                     <td><YourClaimBadge badgeId='0623b8c3-d7e0-421f-b137-ee2f613dbdb4' /></td>
                     <td><YourClaimBadge badgeId='e73e350b-d77e-402a-9575-6e37d4921e8f' /></td>
