@@ -56,7 +56,7 @@ const About: React.FC = () => (
                 <center>
                 <table cellspacing="0" cellpadding="0">
                   <tr>
-                    <th colSpan="4">
+                    <th colSpan="5">
                       <center>Certifications</center>
                     </th>
                   </tr>
