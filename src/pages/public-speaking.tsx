@@ -46,7 +46,7 @@ const PublicSpeaking: React.FC = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-              I enjoy public speaking and am constantly trying to improve on it. There are a few topics I have spoken on, which are listed below. If you'd like me to speak at any event, I would be honoured to do so, so please do get in touch. And if you have an interesting talk or event happening, do let me know, I will try join in to listen.
+              I enjoy public speaking and am constantly trying to improve on it. Few of the topics I have spoken on are listed below. If you'd like me to speak at any event, I would be honoured to do so, so please do get in touch. And if you have an interesting talk or event happening, do let me know, I will try to join in to listen.
               
                 <br/><br/>
                 <center>
@@ -59,7 +59,7 @@ const PublicSpeaking: React.FC = () => (
                   <tr>
                     <td>
                       <a href="https://www.dotnetoxford.com/posts/2020-05-lightning-talks" target="_blank">
-                      NuGet and MSBuild
+                      NuGet &amp; MSBuild
                       </a>
                     </td>
                   </tr>
@@ -74,6 +74,13 @@ const PublicSpeaking: React.FC = () => (
                     <td>
                       <a href="https://drive.google.com/file/d/1Y-u148V2CH9-wEwJ7utoYVXPknzjdlXR/view?usp=sharing" target="_blank">
                       MICROSOFT CERTIFICATION
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://azureadventcalendar.com/" target="_blank">
+                      Azure Advent Calendar 2019: Azure DevOps flaky test identification &amp; reporting
                       </a>
                     </td>
                   </tr>
