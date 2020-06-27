@@ -197,7 +197,8 @@ Now using [postman](https://www.postman.com/) we create the `POST` request.
 Content-Type = application/json
 aeg-event-type = Notification
 ```
-![Postman headers](./img/debugging-eg-function/pm-headers.png)</br>
+These headers are discussed briefly in [Event hub as an event handler for Azure Event Grid events](https://docs.microsoft.com/en-us/azure/event-grid/handler-event-hubs).
+</br>![Postman headers](./img/debugging-eg-function/pm-headers.png)</br>
 - We copy paste the json we created earlier into request body
 ![Postman body](./img/debugging-eg-function/pm-body.png)</br>
 
