@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Finding out IPs for Azure function
+title: Finding out IPs of Azure function
 image: img/funapp-ip-resource-graph/ip-splash.png
 author: Dushyant
 date: 2020-08-02T15:00:00.000Z
