@@ -59,4 +59,4 @@ As a quick detour, the [tech industry has recently started using more explicit t
 Once your development phase is done, definitely remove any unwanted IPs you have added. I normally recommend having a unit test which can use [REST API](https://docs.microsoft.com/en-us/rest/api/azure/) to assert what rules should be present, before the function is deployed to production.
 
 # Conclusion
-Hope this was useful. I am slowly learning new techniques to work with functions. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
+Hope this was useful. I am slowly learning new techniques to work with Azure functions. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
