@@ -56,15 +56,16 @@ const About: React.FC = () => (
                 <center>
                 <table cellspacing="0" cellpadding="0">
                   <tr>
-                    <th colSpan="5">
+                    <th colSpan="6">
                       <center>Certifications</center>
                     </th>
                   </tr>
                   <tr>
-                    <td><YourClaimBadge badgeId='97ad8520-7195-46f5-8cfd-283c150e9057' /></td>
-                    <td><YourClaimBadge badgeId='1505e021-7708-4596-9ac9-87cd05ba927d' /></td>
-                    <td><YourClaimBadge badgeId='0623b8c3-d7e0-421f-b137-ee2f613dbdb4' /></td>
-                    <td><YourClaimBadge badgeId='e73e350b-d77e-402a-9575-6e37d4921e8f' /></td>
+                    <td><YourClaimBadge badgeId='a0d71cdd-ac11-4067-b12f-7afbac1cef61' /></td>
+                    <td><YourClaimBadge badgeId='f563d775-b613-45af-8737-ae54364b7776' /></td>
+                    <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
+                    <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
+                    <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
                     <td>
                       <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
                         <img src="https://www.avantastech.com/wp-content/uploads/2019/12/csm-certified-scrum-alliance.png"
