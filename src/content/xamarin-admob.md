@@ -16,7 +16,7 @@ James Montemagno has a great video on the Xamarin show explaining how to add ban
 `video: https://youtu.be/6teJvSCg6UA`
 
 # SimpleJigsaw
-With help and inspiration from James Montemagno, two of my close friends [Sanjeeb Swain](https://sanjeebsks204.wixsite.com/sanjeeb-swain) & [M Surya Kiran](https://www.zigzagrainbow.com/) and I set out to design our first android app.
+With help and inspiration from James Montemagno, two of my close friends [Sanjeeb Swain](https://sanjeebsks204.wixsite.com/sanjeeb-swain) & [Suryakiran Maruvada](https://www.zigzagrainbow.com/) and I set out to design our first android app.
 
 [![simple jigsaw](./img/xamarin-admob/simple-jigsaw.png)](https://play.google.com/store/apps/details?id=com.rubberduckdev.simplejigsaw)
 <br/>
