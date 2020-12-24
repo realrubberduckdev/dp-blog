@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Static analysis of Azure resource configuration
-image: img/terraform-static-analysis/hashicorp-terraform-banner.jpg
+image: img/terraform-static-analysis/hashicorp-terraform-banner.png
 author: Dushyant
 date: 2020-12-24T8:30:00.000Z
 tags: ["Terraform", "All"]
@@ -15,7 +15,7 @@ This demo is designed as my contribution for [Festive Tech Calendar 2020](https:
 
 This video is part of the festive tech calendar 2020.
 
-`video: https://t.co/K3KnFrItBz?amp=1`
+`video: https://youtu.be/PbS_lQQ1dnE`
 
 # GitHub
 All the code shown in the video is available at [https://github.com/realrubberduckdev/terraform-static-analysis](https://github.com/realrubberduckdev/terraform-static-analysis).
