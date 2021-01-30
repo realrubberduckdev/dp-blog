@@ -53,12 +53,34 @@ const PublicSpeaking: React.FC = () => (
                 <br />
                 <br />
                 <h2>2020</h2>
-                <a
-                  href="https://www.dotnetoxford.com/posts/2020-05-lightning-talks"
-                  target="_blank"
-                >
-                  NuGet &amp; MSBuild
-                </a>
+                <ul>
+                  <li>
+                    <a href="https://youtu.be/PbS_lQQ1dnE" target="_blank">
+                      Static analysis of Terraform code for Azure resources
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.azconf.dev/#Agenda" target="_blank">
+                      How to automate network security for your Azure functions
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.meetup.com/dotnetsouthwest/events/273278637"
+                      target="_blank"
+                    >
+                      Xamarin &amp; Admob, monetizing an android app
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.meetup.com/dotnetcambridge/events/272006955"
+                      target="_blank"
+                    >
+                      Network Security for Azure functions
+                    </a>
+                  </li>
+                </ul>
                 <h2>2019</h2>
                 <ul>
                   <li>
