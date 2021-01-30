@@ -46,60 +46,87 @@ const PublicSpeaking: React.FC = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-              I enjoy public speaking and am constantly trying to improve on it. Few of the topics I have spoken on are listed below. If you'd like me to speak at any event, I would be honoured to do so, so please do get in touch. And if you have an interesting talk or event happening, do let me know, I will try to join in to listen.
-              
-                <br/><br/>
-                <center>
-                <table cellspacing="0" cellpadding="0">
-                  <tr>
-                    <th colSpan="5">
-                      <center>Talks and presentations</center>
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://www.dotnetoxford.com/posts/2020-05-lightning-talks" target="_blank">
+                I enjoy public speaking and am constantly trying to improve on it. Few of the topics
+                I have spoken on are listed below. If you'd like me to speak at any event, I would
+                be honoured to do so, so please do get in touch. And if you have an interesting talk
+                or event happening, do let me know, I will try to join in to listen.
+                <br />
+                <br />
+                <h2>2020</h2>
+                <ul>
+                  <li>
+                    <a href="https://youtu.be/PbS_lQQ1dnE" target="_blank">
+                      Static analysis of Terraform code for Azure resources
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.azconf.dev/#Agenda" target="_blank">
+                      How to automate network security for your Azure functions
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.meetup.com/dotnetsouthwest/events/273278637"
+                      target="_blank"
+                    >
+                      Xamarin &amp; Admob, monetizing an android app
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.meetup.com/dotnetcambridge/events/272006955"
+                      target="_blank"
+                    >
+                      Network Security for Azure functions
+                    </a>
+                  </li>
+                </ul>
+                <h2>2019</h2>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.dotnetoxford.com/posts/2020-05-lightning-talks"
+                      target="_blank"
+                    >
                       NuGet &amp; MSBuild
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://drive.google.com/file/d/1eRu9I70JAVvbySm0RWVtVz-W4dsYYe0U/view?usp=sharing" target="_blank">
-                      CONVERTING MEDIAWIKI TO MD
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://drive.google.com/file/d/1Y-u148V2CH9-wEwJ7utoYVXPknzjdlXR/view?usp=sharing" target="_blank">
-                      MICROSOFT CERTIFICATION
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://azureadventcalendar.com/" target="_blank">
-                      Azure Advent Calendar 2019: Azure DevOps flaky test identification &amp; reporting
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://www.meetup.com/devopsoxford/events/264188223/" target="_blank">
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://drive.google.com/file/d/1eRu9I70JAVvbySm0RWVtVz-W4dsYYe0U/view?usp=sharing"
+                      target="_blank"
+                    >
+                      Converting MediaWiki to MD
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://drive.google.com/file/d/1Y-u148V2CH9-wEwJ7utoYVXPknzjdlXR/view?usp=sharing"
+                      target="_blank"
+                    >
+                      Microsoft Certification
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://azureadventcalendar.com/" target="_blank">
+                      Azure Advent Calendar 2019: Azure DevOps flaky test identification &amp;
+                      reporting
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.meetup.com/devopsoxford/events/264188223/" target="_blank">
                       Practicing DevOps with Azure DevOps
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://www.dotnetoxford.com/posts/2019-05-lightning-talks" target="_blank">
-                        Writing custom Azure DevOps extensions
-                      </a>
-                    </td>
-                  </tr>
-              </table>
-              </center>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dotnetoxford.com/posts/2019-05-lightning-talks"
+                      target="_blank"
+                    >
+                      Writing custom Azure DevOps extensions
+                    </a>
+                  </li>
+                </ul>
               </p>
             </div>
           </PostFullContent>
