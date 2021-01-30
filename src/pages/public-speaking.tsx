@@ -96,7 +96,7 @@ const PublicSpeaking: React.FC = () => (
                       href="https://drive.google.com/file/d/1eRu9I70JAVvbySm0RWVtVz-W4dsYYe0U/view?usp=sharing"
                       target="_blank"
                     >
-                      CONVERTING MEDIAWIKI TO MD
+                      Converting MediaWiki to MD
                     </a>
                   </li>
                   <li>
@@ -104,7 +104,7 @@ const PublicSpeaking: React.FC = () => (
                       href="https://drive.google.com/file/d/1Y-u148V2CH9-wEwJ7utoYVXPknzjdlXR/view?usp=sharing"
                       target="_blank"
                     >
-                      MICROSOFT CERTIFICATION
+                      Microsoft Certification
                     </a>
                   </li>
                   <li>
