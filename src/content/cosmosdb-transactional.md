@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cosmos DB `TransactionalBatch` - Dealing with BadRequest StatusCode
+title: Cosmos DB TransactionalBatch - Dealing with BadRequest StatusCode
 image: img/cosmosdb-transactional/banner.jpg
 author: Dushyant
 date: 2021-03-27T12:30:00.000Z
