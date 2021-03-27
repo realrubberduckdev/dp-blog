@@ -8,7 +8,7 @@ tags: ["Azure", "All"]
 draft: false
 ---
 # Introduction
-Azure Cosmos DB provides a great way to perform [transactional batch operations using the .Net SDK](https://docs.microsoft.com/en-us/azure/cosmos-db/transactional-batch). This operation method provides the [ACID](https://en.wikipedia.org/wiki/ACID) guarantees and so it makes it much easier perform multiple steps in one transactional batch or fail and roll back the whole operation.
+Azure Cosmos DB provides a great way to perform [transactional batch operations using the .Net SDK](https://docs.microsoft.com/en-us/azure/cosmos-db/transactional-batch). This operation method provides the [ACID](https://en.wikipedia.org/wiki/ACID) guarantees and so it makes it much easier to perform multiple steps in one transactional batch or fail and roll back the whole operation.
 
 # Dealing with BadRequest StatusCode
 The Microsoft documentation link above does a fantastic job of explaining how to implement a transactional batch operation, so won't go much into that. But when I was trying it out, I kept getting `StatusCode=BadRequest` and it can be quite difficult to find out why that happens.
@@ -20,7 +20,7 @@ I have been unable to find out details from the response object.
 ```
 var result = response.GetOperationResultAtIndex<Customer>(0);
 ```
-Even the OperationResult wasn't helpful, check image below. Note that, `Customer` is the object I am trying to write to the database.
+Even the OperationResult wasn't helpful, check the image below. Note that, `Customer` is the object I am trying to write to the database.
 
 Say we have a function `GetResponse` like below:
 <br/>
@@ -34,7 +34,7 @@ The only way I could find out what the issue was by completely ditching the `Tra
 await container.CreateItemAsync<Customer>(customerItem, new PartitionKey(customerItem.Id));
 ```
 
-And this now led me to another exception, which was bit more easier to understand.
+And this now led me to another exception, which was a bit easier to understand.
 
 ```
 PartitionKey extracted from document doesn't match the one specified in the header on CreateItemAsync
@@ -47,7 +47,7 @@ So if you have followed the Microsoft documentation, [it lists two limitations](
 TransactionalBatch batch = container.CreateTransactionalBatch(new PartitionKey(customer.PartitionKey))
 ```
 
-So when we try to get the container, we have specify the `PartitionKey` too as the second argument.
+So when we try to get the container, we have to specify the `PartitionKey` too as the second argument.
 ```
 var container = await database.CreateContainerIfNotExistsAsync("CustomerInfo", "/id");
 ```
@@ -68,7 +68,7 @@ public class Customer
   }
 ```
 
-Along with this we also need to ensure the `Container` as well as `TransactionalBatch` are pointing to same `PartitionKey`.
+Along with this we also need to ensure the `Container`, as well as `TransactionalBatch`, are pointing to the same `PartitionKey`.
 
 ```
 string partitionKey = "CustomerPartition";
