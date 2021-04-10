@@ -112,4 +112,4 @@ Notice this in [main.tf](https://github.com/realrubberduckdev/tf-module-test/blo
 
 # Conclusion
 
-This post is more about the concept and the workflow model and how Terraform helps us with the model adoption. Surely there will be other better technologies for IaC and the quest to find a better one shall continue. Hopefully the one without state file management (more on this in a separate post). I hope this was useful, please do share any thoughts or comments you might have.
+This post is more about the concept and the workflow model and how Terraform helps us with the model adoption. Surely there will be other better technologies for [IaC](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-infrastructure-as-code) and the quest to find a better one shall continue. Hopefully the one without state file management (more on this in a separate post). I hope this was useful, please do share any thoughts or comments you might have.
