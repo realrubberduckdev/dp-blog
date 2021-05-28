@@ -52,6 +52,14 @@ const PublicSpeaking: React.FC = () => (
                 or event happening, do let me know, I will try to join in to listen.
                 <br />
                 <br />
+                <h2>2021</h2>
+                <ul>
+                  <li>
+                    <a href="https://unhandledexceptionpodcast.com/posts/0013-devopswithdushyant/" target="_blank">
+                      The Unhandled Exception Podcast - Episode 13: DevOps with Dushyant
+                    </a>
+                  </li>
+                </ul>
                 <h2>2020</h2>
                 <ul>
                   <li>
