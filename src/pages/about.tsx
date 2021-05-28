@@ -69,8 +69,8 @@ const About: React.FC = () => (
                     <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
                     <td>
                       <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
-                        <img src="https://www.avantastech.com/wp-content/uploads/2019/12/csm-certified-scrum-alliance.png"
-                          alt="Certified Scrum Master" width="150" height="70" />
+                        <img src="https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Files%20and%20PDFs/Certifications/CSM/SCR20146-Seals-Final-CSM.jpg"
+                          alt="Certified Scrum Master" width="100" height="100" />
                           Certified Scrum Master
                       </a>
                     </td>
