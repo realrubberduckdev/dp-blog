@@ -56,17 +56,19 @@ const About: React.FC = () => (
                 <center>
                   <table cellspacing="0" cellpadding="0">
                     <tr>
-                      <th colSpan="4">
+                      <th colSpan="5">
                         <center>Certifications</center>
                       </th>
                     </tr>
                     <tr>
-                      <td><YourClaimBadge badgeId='029c4b06-604b-4ddb-a74a-fc4b137a9751' /></td>
-                      <td><YourClaimBadge badgeId='a0d71cdd-ac11-4067-b12f-7afbac1cef61' /></td>
-                      <td><YourClaimBadge badgeId='f563d775-b613-45af-8737-ae54364b7776' /></td>
+                      <td><YourClaimBadge badgeId='5c12b822-23e2-48ce-a8a8-ee9b3dfd0533' /></td>
+                      <td><YourClaimBadge badgeId='2dad0827-43f8-4560-92c8-fa6a1870964e' /></td>
                       <td><YourClaimBadge badgeId='1f7c1fd6-d4d8-4e14-9c95-88ea1da97bff' /></td>
+                      <td><YourClaimBadge badgeId='029c4b06-604b-4ddb-a74a-fc4b137a9751' /></td>
+                      <td><YourClaimBadge badgeId='f563d775-b613-45af-8737-ae54364b7776' /></td>
                     </tr>
                     <tr>
+                      <td><YourClaimBadge badgeId='a0d71cdd-ac11-4067-b12f-7afbac1cef61' /></td>
                       <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
                       <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
                       <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
