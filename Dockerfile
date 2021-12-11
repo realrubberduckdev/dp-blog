@@ -1,4 +1,4 @@
-FROM node:15.14.0 AS builder
+FROM node:16.13.1 AS builder
 WORKDIR /dpblog
 RUN npm i -g gatsby-cli
 COPY package*.json ./
