@@ -15,7 +15,7 @@ This demo is designed as my contribution for [Festive Tech Calendar 2021](https:
 
 This video is part of the festive tech calendar 2020.
 
-`video: https://youtu.be/hPMuTi4pc4`
+`video: https://youtu.be/EqSNAFEUu-M`
 
 # Features of an ideal IaC language - my thoughts
 ## Clarity, simplicity, unity
