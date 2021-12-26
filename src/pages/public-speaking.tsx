@@ -54,6 +54,21 @@ const PublicSpeaking: React.FC = () => (
                 <br />
                 <h2>2021</h2>
                 <ul>
+                <li>
+                    <a href="https://youtu.be/EqSNAFEUu-M" target="_blank">
+                    Festive Tech Calendar - Features of an ideal IaC language
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://youtu.be/gLyq9hQbacM?t=13890" target="_blank">
+                      AzConf 2021 - How to deploy and maintain financial software estate on Azure
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.meetup.com/dotnetcambridge/events/277925683/" target="_blank">
+                      .Net Cambridge - How to deploy and maintain financial software estate on Azure
+                    </a>
+                  </li>
                   <li>
                     <a href="https://unhandledexceptionpodcast.com/posts/0013-devopswithdushyant/" target="_blank">
                       The Unhandled Exception Podcast - Episode 13: DevOps with Dushyant
