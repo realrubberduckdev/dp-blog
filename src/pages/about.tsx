@@ -73,7 +73,15 @@ const About: React.FC = () => (
                       <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
                       <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
                       <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
-                      <td></td>
+                      <td>
+                        <center>
+                          <a href='https://badge.azconf.dev/badge/ef5e192c-bd66-4004-900f-725e6bfdd1d0' target="_blank">
+                              <img src="https://azconfdev.blob.core.windows.net/azbadges/speaker.png"
+                                alt="Speaker: Azure Community Conference 2021" width="100" height="100"/>
+                              AzConf 2021
+                          </a>
+                        </center>
+                      </td>
                       <td>
                         <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
                           <img src="https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Files%20and%20PDFs/Certifications/CSM/SCR20146-Seals-Final-CSM.jpg"
