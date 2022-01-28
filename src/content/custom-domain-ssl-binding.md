@@ -3,7 +3,7 @@ layout: post
 title: Using Azure App Service managed certificate
 image: img/custom-domain-ssl-binding/banner.jpg
 author: Dushyant
-date: 2022-01-28T17:30:00.000Z
+date: 2022-01-28T16:30:00.000Z
 tags: ["Azure", "All"]
 draft: false
 ---
