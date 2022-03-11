@@ -65,7 +65,7 @@ const PublicSpeaking: React.FC = () => (
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.meetup.com/dotnetcambridge/events/277925683/" target="_blank">
+                    <a href="https://youtu.be/YfGn4rjPi3c" target="_blank">
                       .Net Cambridge - How to deploy and maintain financial software estate on Azure
                     </a>
                   </li>
@@ -83,8 +83,8 @@ const PublicSpeaking: React.FC = () => (
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.azconf.dev/#Agenda" target="_blank">
-                      How to automate network security for your Azure functions
+                    <a href="https://youtu.be/SnBcZGgOq8Q" target="_blank">
+                      AzConf Dev - How to automate network security for your Azure functions
                     </a>
                   </li>
                   <li>
@@ -97,10 +97,10 @@ const PublicSpeaking: React.FC = () => (
                   </li>
                   <li>
                     <a
-                      href="https://www.meetup.com/dotnetcambridge/events/272006955"
+                      href="https://youtu.be/WQQkVHXBle8"
                       target="_blank"
                     >
-                      Network Security for Azure functions
+                      .Net Cambridge - Network Security for Azure functions
                     </a>
                   </li>
                 </ul>
