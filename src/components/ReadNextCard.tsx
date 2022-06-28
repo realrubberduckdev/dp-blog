@@ -163,9 +163,7 @@ export interface ReadNextProps {
 
 export interface ReadNextQuery {
   header: {
-    childImageSharp: {
-      fluid: any;
-    };
+    childImageSharp: any;
   };
 }
 
@@ -176,18 +174,14 @@ const ReadNextCard: React.FC<ReadNextProps> = (props) => {
         query ReadNextQuery {
           header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
             childImageSharp {
-              # Specify the image processing specifications right in the query.
-              # Makes it trivial to update as your page's design changes.
-              fluid(maxWidth: 2000) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2000)
             }
           }
         }
       `}
       // tslint:disable-next-line:react-this-binding-issue
       render={({ header }: ReadNextQuery) => (
-        <ReadNextCardStyles coverImage={header.childImageSharp.fluid.src}>
+        <ReadNextCardStyles coverImage={header.childImageSharp.gatsbyImageData.images.fallback.src}>
           <ReadNextCardHeader>
             <ReadNextCardHeaderSitetitle>
               &mdash; {config.title} &mdash;

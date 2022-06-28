@@ -72,11 +72,9 @@ const AuthorProfileBioImage = css`
 `;
 
 interface AuthorTemplateProps {
-  pathContext: {
-    slug: string;
-  };
   pageContext: {
     author: string;
+    slug: string;
   };
   data: {
     logo: {
@@ -98,15 +96,11 @@ interface AuthorTemplateProps {
       location?: string;
       // eslint-disable-next-line @typescript-eslint/camelcase
       profile_image?: {
-        childImageSharp: {
-          fluid: any;
-        };
+        childImageSharp: any;
       };
       bio?: string;
       avatar: {
-        childImageSharp: {
-          fluid: any;
-        };
+        childImageSharp: any;
       };
     };
   };
@@ -114,6 +108,8 @@ interface AuthorTemplateProps {
 
 const Author: React.FC<AuthorTemplateProps> = (props) => {
   const author = props.data.authorYaml;
+
+  console.log(author);
 
   const edges = props.data.allMarkdownRemark.edges.filter((edge) => {
     const isDraft = edge.node.frontmatter.draft !== true || process.env.NODE_ENV === 'development';
@@ -132,12 +128,12 @@ const Author: React.FC<AuthorTemplateProps> = (props) => {
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="profile" />
         <meta property="og:title" content={`${author.id} - ${config.title}`} />
-        <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
+        <meta property="og:url" content={config.siteUrl + props.pageContext.slug} />
         <meta property="article:publisher" content="https://www.facebook.com/ghost" />
         <meta property="article:author" content="https://www.facebook.com/ghost" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`${author.id} - ${config.title}`} />
-        <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
+        <meta name="twitter:url" content={config.siteUrl + props.pageContext.slug} />
         {config.twitter && (
           <meta
             name="twitter:site"
@@ -158,7 +154,7 @@ const Author: React.FC<AuthorTemplateProps> = (props) => {
           style={{
             // eslint-disable-next-line @typescript-eslint/camelcase
             backgroundImage: author.profile_image
-              ? `url(${author.profile_image.childImageSharp.fluid.src})`
+              ? `url(${author.profile_image.childImageSharp.gatsbyImageData.images.fallback.src})`
               : '',
           }}
         >
@@ -167,7 +163,9 @@ const Author: React.FC<AuthorTemplateProps> = (props) => {
             <SiteHeaderContent>
               <img
                 css={[AuthorProfileImage, AuthorProfileBioImage]}
-                src={props.data.authorYaml.avatar.childImageSharp.fluid.src}
+                src={
+                  props.data.authorYaml.avatar.childImageSharp.gatsbyImageData.images.fallback.src
+                }
                 alt={author.id}
               />
               <SiteTitle>{author.id}</SiteTitle>
@@ -269,16 +267,12 @@ export const pageQuery = graphql`
       location
       profile_image {
         childImageSharp {
-          fluid(maxWidth: 3720) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 3720)
         }
       }
       avatar {
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 200)
         }
       }
     }
@@ -297,23 +291,12 @@ export const pageQuery = graphql`
             draft
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720)
               }
             }
             author {
               id
               bio
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
-                  }
-                }
-              }
             }
           }
           fields {

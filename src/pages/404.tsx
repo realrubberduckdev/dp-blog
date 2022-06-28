@@ -109,23 +109,12 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720)
               }
             }
             author {
               id
               bio
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
-                  }
-                }
-              }
             }
           }
           excerpt

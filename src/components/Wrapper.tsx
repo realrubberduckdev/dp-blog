@@ -9,6 +9,8 @@ const StyledWrapper = styled.div`
 
 interface WrapperProps {
   className?: string;
+  css: any;
+  children: React.ReactNode;
 }
 
 const Wrapper: React.FC<WrapperProps> = ({ children, className }) => (

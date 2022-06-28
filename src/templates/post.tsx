@@ -138,22 +138,11 @@ interface PageTemplateProps {
         date: string;
         userDate: string;
         image: any;
-        // image: {
-        //   childImageSharp: {
-        //     gatsbyImageData: IGatsbyImageData;
-        //   };
-        // };
         tags: string[];
         author: {
           id: string;
           bio: string;
-          // avatar: {
-          //   children: Array<{
-          //     fixed: {
-          //       src: string;
-          //     };
-          //   }>;
-          // };
+          avatar: any;
         };
       };
     };
@@ -211,7 +200,7 @@ export interface PageContext {
 
 const PageTemplate: React.FC<PageTemplateProps> = (props) => {
   const post = props.data.markdownRemark;
-  console.log(props);
+
   let width = '';
   let height = '';
   // if (post.frontmatter.image && post.frontmatter.image.childImageSharp) {
@@ -316,10 +305,10 @@ const PageTemplate: React.FC<PageTemplateProps> = (props) => {
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
 
-              {/* <PostFullFooter>
+              <PostFullFooter>
                 <AuthorCard author={post.frontmatter.author} />
-                <PostFullFooterRight authorId={post.frontmatter.author.id} />
-              </PostFullFooter> */}
+                <PostFullFooterRight authorId={post.frontmatter.author?.id} />
+              </PostFullFooter>
             </article>
           </div>
         </main>
