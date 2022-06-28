@@ -6,7 +6,7 @@ const DisqusComments = (props: any) => {
     url: props.postURL,
     identifier: props.postURL,
     title: props.postTitle,
-  }
+  };
   return (
     <>
       <h1>{props.postTitle}</h1>
@@ -14,7 +14,7 @@ const DisqusComments = (props: any) => {
       {/* Post Contents */}
       <Disqus config={disqusConfig} />
     </>
-  )
-}
+  );
+};
 
-export default DisqusComments
+export default DisqusComments;

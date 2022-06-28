@@ -3,7 +3,7 @@ import Wrapper from '../components/Wrapper';
 import SiteNav from '../components/header/SiteNav';
 import { SiteHeader, outer, inner, SiteMain } from '../styles/shared';
 import * as React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
@@ -54,9 +54,9 @@ const PublicSpeaking: React.FC = () => (
                 <br />
                 <h2>2021</h2>
                 <ul>
-                <li>
+                  <li>
                     <a href="https://youtu.be/EqSNAFEUu-M" target="_blank">
-                    Festive Tech Calendar - Features of an ideal IaC language
+                      Festive Tech Calendar - Features of an ideal IaC language
                     </a>
                   </li>
                   <li>
@@ -70,7 +70,10 @@ const PublicSpeaking: React.FC = () => (
                     </a>
                   </li>
                   <li>
-                    <a href="https://unhandledexceptionpodcast.com/posts/0013-devopswithdushyant/" target="_blank">
+                    <a
+                      href="https://unhandledexceptionpodcast.com/posts/0013-devopswithdushyant/"
+                      target="_blank"
+                    >
                       The Unhandled Exception Podcast - Episode 13: DevOps with Dushyant
                     </a>
                   </li>
@@ -96,10 +99,7 @@ const PublicSpeaking: React.FC = () => (
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://youtu.be/WQQkVHXBle8"
-                      target="_blank"
-                    >
+                    <a href="https://youtu.be/WQQkVHXBle8" target="_blank">
                       .Net Cambridge - Network Security for Azure functions
                     </a>
                   </li>

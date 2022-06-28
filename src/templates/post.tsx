@@ -1,10 +1,10 @@
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import * as _ from 'lodash';
 import { setLightness } from 'polished';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
 import AuthorCard from '../components/AuthorCard';
@@ -125,7 +125,7 @@ interface PageTemplateProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: any;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     markdownRemark: {
@@ -137,22 +137,23 @@ interface PageTemplateProps {
         title: string;
         date: string;
         userDate: string;
-        image: {
-          childImageSharp: {
-            fluid: any;
-          };
-        };
+        image: any;
+        // image: {
+        //   childImageSharp: {
+        //     gatsbyImageData: IGatsbyImageData;
+        //   };
+        // };
         tags: string[];
         author: {
           id: string;
           bio: string;
-          avatar: {
-            children: Array<{
-              fixed: {
-                src: string;
-              };
-            }>;
-          };
+          // avatar: {
+          //   children: Array<{
+          //     fixed: {
+          //       src: string;
+          //     };
+          //   }>;
+          // };
         };
       };
     };
@@ -160,7 +161,7 @@ interface PageTemplateProps {
       totalCount: number;
       edges: Array<{
         node: {
-          timeToRead: number;
+          // timeToRead: number;
           frontmatter: {
             title: string;
           };
@@ -172,6 +173,7 @@ interface PageTemplateProps {
     };
   };
   pageContext: {
+    slug: string;
     prev: PageContext;
     next: PageContext;
   };
@@ -186,7 +188,7 @@ export interface PageContext {
   frontmatter: {
     image: {
       childImageSharp: {
-        fluid: any;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
     title: string;
@@ -207,14 +209,15 @@ export interface PageContext {
   };
 }
 
-const PageTemplate: React.FC<PageTemplateProps> = props => {
+const PageTemplate: React.FC<PageTemplateProps> = (props) => {
   const post = props.data.markdownRemark;
+  console.log(props);
   let width = '';
   let height = '';
-  if (post.frontmatter.image && post.frontmatter.image.childImageSharp) {
-    width = post.frontmatter.image.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
-    height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
-  }
+  // if (post.frontmatter.image && post.frontmatter.image.childImageSharp) {
+  //   width = post.frontmatter.image.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
+  //   height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
+  // }
 
   return (
     <IndexLayout className="post-template">
@@ -227,9 +230,12 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.frontmatter.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
-        {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
-          <meta property="og:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
+        <meta property="og:url" content={config.siteUrl + props.pageContext.slug} />
+        {post.frontmatter.image?.childImageSharp?.gatsbyImageData && (
+          <meta
+            property="og:image"
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback.src}`}
+          />
         )}
         <meta property="article:published_time" content={post.frontmatter.date} />
         {/* not sure if modified time possible */}
@@ -243,19 +249,29 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.frontmatter.title} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
-        {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
-          <meta name="twitter:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
+        <meta name="twitter:url" content={config.siteUrl + props.pageContext.slug} />
+        {post.frontmatter.image && post.frontmatter.image.childImageSharp && (
+          <meta
+            name="twitter:image"
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback.src}`}
+          />
         )}
         <meta name="twitter:label1" content="Written by" />
-        <meta name="twitter:data1" content={post.frontmatter.author.id} />
-        <meta name="twitter:label2" content="Filed under" />
-        {post.frontmatter.tags && <meta name="twitter:data2" content={post.frontmatter.tags[0]} />}
-        {config.twitter && <meta name="twitter:site" content={`@${config.twitter.split('https://twitter.com/')[1]}`} />}
-        {config.twitter && <meta
-          name="twitter:creator"
-          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-        />}
+        {/* <meta name="twitter:data1" content={post.frontmatter.author.id} /> */}
+        {/* <meta name="twitter:label2" content="Filed under" /> */}
+        {/* {post.frontmatter.tags && <meta name="twitter:data2" content={post.frontmatter.tags[0]} />} */}
+        {config.twitter && (
+          <meta
+            name="twitter:site"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
+        {config.twitter && (
+          <meta
+            name="twitter:creator"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
         {width && <meta property="og:image:width" content={width} />}
         {height && <meta property="og:image:height" content={height} />}
       </Helmet>
@@ -274,24 +290,24 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                   <PostFullMetaDate dateTime={post.frontmatter.date}>
                     {post.frontmatter.userDate}
                   </PostFullMetaDate>
-                  {post.frontmatter.tags &&
-                    post.frontmatter.tags.length > 0 && (
-                      <>
-                        <DateDivider>/</DateDivider>
-                        <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
-                          {post.frontmatter.tags[0]}
-                        </Link>
-                      </>
+                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                    <>
+                      <DateDivider>/</DateDivider>
+                      <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
+                        {post.frontmatter.tags[0]}
+                      </Link>
+                    </>
                   )}
                 </PostFullMeta>
                 <PostFullTitle>{post.frontmatter.title}</PostFullTitle>
               </PostFullHeader>
 
-              {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
+              {post.frontmatter.image?.childImageSharp?.gatsbyImageData && (
                 <PostFullImage>
-                  <Img
+                  <GatsbyImage
                     style={{ height: '100%' }}
-                    fluid={post.frontmatter.image.childImageSharp.fluid}
+                    alt=""
+                    image={post.frontmatter.image.childImageSharp.gatsbyImageData}
                   />
                 </PostFullImage>
               )}
@@ -300,10 +316,10 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
 
-              <PostFullFooter>
+              {/* <PostFullFooter>
                 <AuthorCard author={post.frontmatter.author} />
                 <PostFullFooterRight authorId={post.frontmatter.author.id} />
-              </PostFullFooter>
+              </PostFullFooter> */}
             </article>
           </div>
         </main>
@@ -321,7 +337,10 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
             </ReadNextFeed>
           </div>
         </aside>
-        <DisqusComments postTitle={post.frontmatter.title} postURL={config.siteUrl + props.pathContext.slug} />
+        <DisqusComments
+          postTitle={post.frontmatter.title}
+          postURL={config.siteUrl + props.pageContext.slug}
+        />
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -331,19 +350,16 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
 export default PageTemplate;
 
 export const query = graphql`
-  query($slug: String, $primaryTag: String) {
+  query ($slug: String, $primaryTag: String) {
     logo: file(relativePath: { eq: "img/rubber-duck-logo.png" }) {
       childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       htmlAst
       excerpt
-      timeToRead
       frontmatter {
         title
         userDate: date(formatString: "D MMMM YYYY")
@@ -351,23 +367,12 @@ export const query = graphql`
         tags
         image {
           childImageSharp {
-            fluid(maxWidth: 3720) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 3720)
           }
         }
         author {
           id
           bio
-          avatar {
-            children {
-              ... on ImageSharp {
-                fixed(quality: 90) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -379,7 +384,6 @@ export const query = graphql`
       edges {
         node {
           id
-          timeToRead
           excerpt
           frontmatter {
             title

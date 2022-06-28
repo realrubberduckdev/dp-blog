@@ -13,11 +13,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `rubberduckdev`
-      }
+        shortname: `rubberduckdev`,
+      },
     },
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-sharp',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,7 +30,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-embed-video",
+            resolve: 'gatsby-remark-embed-video',
             options: {
               width: 800,
               ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
@@ -41,15 +41,15 @@ module.exports = {
                 {
                   id: 'youtube',
                   embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-                }
-              ] //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-            }
+                },
+              ], //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
+            },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-            }
+              target: '_blank',
+            },
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
@@ -60,7 +60,7 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
-          'gatsby-remark-abbr',
+          // 'gatsby-remark-abbr',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -78,12 +78,13 @@ module.exports = {
         siteUrl: 'https://rubberduckdev.com/',
       },
     },
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-typescript',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
-    'gatsby-plugin-feed',
+    // 'gatsby-plugin-feed',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {

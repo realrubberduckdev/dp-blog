@@ -1,4 +1,4 @@
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { darken, lighten } from 'polished';
 import * as React from 'react';
 import Helmet from 'react-helmet';
@@ -9,6 +9,7 @@ import favicon from '../../src/favicon.ico';
 
 interface IndexProps {
   className?: string;
+  children: React.ReactNode;
 }
 
 const GlobalStyles = css`
@@ -479,7 +480,7 @@ const GlobalStyles = css`
   }
 `;
 
-const IndexLayout: React.FC<IndexProps> = props => {
+const IndexLayout: React.FC<IndexProps> = (props) => {
   return (
     <div className={props.className}>
       <Helmet>

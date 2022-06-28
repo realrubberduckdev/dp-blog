@@ -55,23 +55,11 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             excerpt
-            timeToRead
             frontmatter {
               title
               tags
               date
               draft
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 3720) {
-                    aspectRatio
-                    base64
-                    sizes
-                    src
-                    srcSet
-                  }
-                }
-              }
               author {
                 id
                 bio
@@ -159,12 +147,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const tagTemplate = path.resolve('./src/templates/tags.tsx');
   const tags = _.uniq(
     _.flatten(
-      result.data.allMarkdownRemark.edges.map(edge => {
+      result.data.allMarkdownRemark.edges.map((edge) => {
         return _.castArray(_.get(edge, 'node.frontmatter.tags', []));
       }),
     ),
   );
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     createPage({
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagTemplate,
@@ -176,7 +164,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create author pages
   const authorTemplate = path.resolve('./src/templates/author.tsx');
-  result.data.allAuthorYaml.edges.forEach(edge => {
+  result.data.allAuthorYaml.edges.forEach((edge) => {
     createPage({
       path: `/author/${_.kebabCase(edge.node.id)}/`,
       component: authorTemplate,

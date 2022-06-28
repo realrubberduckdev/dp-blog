@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import SiteNavLogo from '../components/header/SiteNavLogo';
 import PostCard from '../components/PostCard';
@@ -58,7 +58,7 @@ interface NotFoundTemplateProps {
   };
 }
 
-const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
+const NotFoundPage: React.FC<NotFoundTemplateProps> = (props) => {
   const { edges } = props.data.allMarkdownRemark;
 
   return (
@@ -103,7 +103,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          timeToRead
           frontmatter {
             title
             date

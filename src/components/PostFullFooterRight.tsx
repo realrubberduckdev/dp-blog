@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import * as _ from 'lodash';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { lighten } from 'polished';
 
 import { colors } from '../styles/colors';
@@ -35,7 +35,7 @@ export interface PostFullFooterRightProps {
   authorId: string;
 }
 
-const PostFullFooterRight: React.FC<PostFullFooterRightProps> = props => (
+const PostFullFooterRight: React.FC<PostFullFooterRightProps> = (props) => (
   <PostFullFooterRightDiv>
     <Link css={AuthorCardButton} to={`/author/${_.kebabCase(props.authorId)}/`}>
       Read More

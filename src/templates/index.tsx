@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import Helmet from 'react-helmet';
 
 import Footer from '../components/Footer';
@@ -74,12 +74,26 @@ export interface IndexProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: any;
+        gatsbyImageData: {
+          images: {
+            fallback: {
+              src: string;
+            };
+          };
+        };
       };
     };
     header: {
       childImageSharp: {
-        fluid: any;
+        gatsbyImageData: {
+          images: {
+            fallback: {
+              src: string;
+              width: string;
+              height: number;
+            };
+          };
+        };
       };
     };
     allMarkdownRemark: {
@@ -90,10 +104,12 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
-  const width = props.data.header.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
-  const height = String(Number(width) / props.data.header.childImageSharp.fluid.aspectRatio);
-
+const IndexPage: React.FC<IndexProps> = (props) => {
+  const width = props.data.header.childImageSharp.gatsbyImageData.images.fallback.width;
+  const height = String(
+    Number(width) / props.data.header.childImageSharp.gatsbyImageData.images.fallback.height,
+  );
+  console.log(props);
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
@@ -107,17 +123,19 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData.images.fallback.src}`}
         />
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        {config.googleSiteVerification && <meta name="google-site-verification" content={config.googleSiteVerification} />}
+        {config.googleSiteVerification && (
+          <meta name="google-site-verification" content={config.googleSiteVerification} />
+        )}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={config.title} />
         <meta name="twitter:description" content={config.description} />
         <meta name="twitter:url" content={config.siteUrl} />
         <meta
           name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData.images.fallback.src}`}
         />
         {config.twitter && (
           <meta
@@ -126,13 +144,13 @@ const IndexPage: React.FC<IndexProps> = props => {
           />
         )}
         <meta property="og:image:width" content={width} />
-        <meta property="og:image:height" content={height} />
+        /<meta property="og:image:height" content={height} />
       </Helmet>
       <Wrapper>
         <header
           css={[outer, SiteHeader]}
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fluid.src}')`,
+            backgroundImage: `url('${props.data.header.childImageSharp.gatsbyImageData.images.fallback.src}')`,
           }}
         >
           <div css={inner}>
@@ -141,7 +159,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 {props.data.logo ? (
                   <img
                     style={{ maxHeight: '45px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
+                    src={props.data.logo.childImageSharp.gatsbyImageData.images.fallback.src}
                     alt={config.title}
                   />
                 ) : (
@@ -156,7 +174,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
-              {props.data.allMarkdownRemark.edges.map(post => {
+              {props.data.allMarkdownRemark.edges.map((post) => {
                 // filter out drafts in production
                 return (
                   (post.node.frontmatter.draft !== true ||
@@ -169,7 +187,10 @@ const IndexPage: React.FC<IndexProps> = props => {
           </div>
         </main>
         {props.children}
-        <Pagination currentPage={props.pageContext.currentPage} numPages={props.pageContext.numPages} />
+        <Pagination
+          currentPage={props.pageContext.currentPage}
+          numPages={props.pageContext.numPages}
+        />
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -182,31 +203,22 @@ export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/rubber-duck-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 2000)
       }
     }
     header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 2000)
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC },
-      filter: { frontmatter: { draft: { ne: true } } },
-      limit: $limit,
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+      limit: $limit
       skip: $skip
     ) {
       edges {
         node {
-          timeToRead
           frontmatter {
             title
             date
@@ -214,23 +226,12 @@ export const pageQuery = graphql`
             draft
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720)
               }
             }
             author {
               id
               bio
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
-                  }
-                }
-              }
             }
           }
           excerpt

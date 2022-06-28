@@ -24,17 +24,17 @@ const ReadNextCardStyles = styled.article<ReadNextCardStylesProps>`
   background-size: cover;
   border-radius: 5px;
   box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-  background-image: url(${props => props.coverImage});
+  background-image: url(${(props) => props.coverImage});
 
   :before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     display: block;
-    background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 40, 60, 0.8) 0%, rgba(0, 20, 40, 0.7) 100%);
     border-radius: 5px;
     backdrop-filter: blur(2px);
   }
@@ -149,7 +149,7 @@ export interface ReadNextProps {
     totalCount: number;
     edges: Array<{
       node: {
-        timeToRead: number;
+        // timeToRead: number;
         frontmatter: {
           title: string;
         };
@@ -169,7 +169,7 @@ export interface ReadNextQuery {
   };
 }
 
-const ReadNextCard: React.FC<ReadNextProps> = props => {
+const ReadNextCard: React.FC<ReadNextProps> = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -201,7 +201,7 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
           </ReadNextDivider>
           <ReadNextCardContent>
             <ul>
-              {props.relatedPosts.edges.map(n => {
+              {props.relatedPosts.edges.map((n) => {
                 return (
                   <li key={n.node.frontmatter.title}>
                     <Link to={n.node.fields.slug}>{n.node.frontmatter.title}</Link>
