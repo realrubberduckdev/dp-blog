@@ -1,0 +1,12 @@
+- id: dushyant
+  name: Dushyant Priyadarshee
+  initial: DP
+  bio: Software Engineer with passion for agile practices, DevOps, Microsoft technologies and all things Azure.
+  joined: October 2019
+  avatar: ./avatars/dushyant.png
+  sns:
+    - [stackoverflow, 1228479/dushyantp]
+    - [twitter, rubberduckdev]
+    - [github, realrubberduckdev]
+    - [mailto, mailto:dushyantpriyadarshee@gmail.com]
+    - [url, https://www.rubberduckdev.com]
