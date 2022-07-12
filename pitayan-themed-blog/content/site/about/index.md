@@ -6,8 +6,11 @@ keywords: about us
 noIndex: true
 displayTitle: true
 ---
+import YourClaimBadge from "./YourAcclaimBadge"
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra egestas odio id accumsan. In vel ipsum quam. Fusce scelerisque rutrum tempus. Mauris in velit sapien. In mi nibh, dignissim in ligula ut, faucibus lacinia libero. Etiam volutpat turpis est, a scelerisque sem commodo eu. Morbi lectus quam, molestie eget vestibulum in, porta ac tellus. Aliquam feugiat, orci non vehicula tristique, augue ex congue dui, non suscipit velit purus vitae diam. Phasellus dui augue, faucibus sed neque id, pellentesque porta magna. Cras nec lacinia dui. Pellentesque lacinia, nisi non porta condimentum, risus nisi semper erat, vel ullamcorper neque justo sit amet erat. Mauris lacinia dolor in arcu tempor pretium.
+
+<YourClaimBadge badgeId="5c12b822-23e2-48ce-a8a8-ee9b3dfd0533" />
 
 Donec venenatis blandit erat. In a sodales neque, sit amet dignissim eros. Donec sit amet semper ligula. Praesent vel ligula ultrices, efficitur nisi non, tincidunt dolor. Proin a dolor dolor. Fusce malesuada ornare felis eu auctor. Morbi vestibulum venenatis lectus scelerisque tempus.
 
