@@ -6,8 +6,17 @@ This is a static blog generator and starter gatsby repo. A port of [Casper](http
 
 ## Local build
 
+### Install yarn (Optional)
+Ignore if already installed.
+
 ```
-npm install
+npm install --global yarn
+```
+
+### Local dev
+
+```
+yarn install
 gatsby build
 gatsby develop
 ```
