@@ -8,7 +8,7 @@ tags: ["Terraform", "All"]
 draft: false
 ---
 # Introduction
-Recently many teams I have been working with have been hitting this `error installing provider` issue with Terraform. We have noticed that it is only happening with Terraform 0.11 (could be happening with other version, we just haven't noticed it yet).
+Recently many teams I have been working with have been hitting this `error installing provider` issue with Terraform. We have noticed that it is only happening with Terraform 0.11 (could be happening with other versions, we just haven't noticed it yet).
 
 The error message is in lines of
 
@@ -37,9 +37,9 @@ terraform init -verify-plugins=false
 ```
 
 # Explanation
-The issue here is the `openpgp` plugin signature has changed and by default `Terraform` performs a verification for any plugins used. By skipping verification, we are at risk of getting security vulnerability into our deployment process. Hence **it is definitely not recommended to skip plugins verification in production systems**. This can be a quick workaround while you possibly upgrade your Terraform and provider versions to use the latest valid plugins.
+The issue here is the `openpgp` plugin signature has changed and by default `Terraform` performs verification for any plugins used. By skipping verification, we are at risk of getting security vulnerabilities into our deployment process. Hence **it is not recommended to skip plugin verification in production systems**. This can be a quick workaround while you possibly upgrade your Terraform and provider versions to use the latest valid plugins.
 
 Please note that I was unable to find any official documentation about this `terraform init` parameter. The only place it is described is at [lightnetics.com](https://www.lightnetics.com/topic/2956/terraform-init-help).
 
 # Conclusion
-Hope this was useful and saves you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
+Hope this was useful and saved you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
