@@ -36,10 +36,12 @@ C:\home\site\wwwroot>curl -s https://api.ipify.org
 That should return the outbound IP from which the request went to `ipify` service.
 
 ### Mimic ipipfy using own service
-We can also create our own service e.g. the dotnet Azure function code below can return the caller's IP
+We can also create our own service e.g. an Azure function.
 
 ![Console tab](./img/app-outbound-ip/own-service.png)
+</br>
 
+The dotnet code below can return the caller's IP
 ```
 #r "Newtonsoft.Json"
 
