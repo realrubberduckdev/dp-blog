@@ -35,5 +35,31 @@ C:\home\site\wwwroot>curl -s https://api.ipify.org
 
 That should return the outbound IP from which the request went to `ipify` service.
 
+### Mimic ipipfy using own service
+We can also create our own service e.g. an Azure function.
+
+![Console tab](./img/app-outbound-ip/own-service.png)
+</br>
+
+The dotnet code below can return the caller's IP
+```
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+
+public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
+{
+    string responseMessage = $"Caller ip = {req.HttpContext.Connection.RemoteIpAddress.ToString()}";
+    return new OkObjectResult(responseMessage);
+}
+```
+
+We can call the service using postman to test or from console of another app
+
+![Console tab](./img/app-outbound-ip/call-using-postman.png)
+
 # Conclusion
 Hope this was useful and saved you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
