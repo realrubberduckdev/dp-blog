@@ -50,9 +50,7 @@ using Newtonsoft.Json;
 
 public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 {
-    log.LogInformation("C# HTTP trigger function processed a request.");
-    string callerIp = req.HttpContext.Connection.RemoteIpAddress.ToString();
-    string responseMessage = $"Caller ip = {callerIp}";
+    string responseMessage = $"Caller ip = {req.HttpContext.Connection.RemoteIpAddress.ToString()}";
     return new OkObjectResult(responseMessage);
 }
 ```
