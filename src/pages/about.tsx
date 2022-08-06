@@ -72,22 +72,34 @@ const About: React.FC = () => (
                       <td><YourClaimBadge badgeId='5cb8bd57-d88f-477d-bb53-4a43d842bc95' /></td>
                       <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
                       <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
+                      <td><YourClaimBadge badgeId='9400517c-4b45-41ee-be94-757bb0241cc3' /></td>
                       <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
+                      <td>
+                      <center>
+                          <a href='https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/aws-partner-accreditation.png' target="_blank">
+                            <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/aws-partner-accreditation3.png"
+                              alt="AWS Partner: Accreditation (Technical)(Classroom)" width="100" height="100" />
+                              AWS (Technical)
+                          </a>
+                        </center>
+                      </td>
+                    </tr>
+                    <tr>
                       <td>
                         <center>
                           <a href='https://badge.azconf.dev/badge/ef5e192c-bd66-4004-900f-725e6bfdd1d0' target="_blank">
-                              <img src="https://azconfdev.blob.core.windows.net/azbadges/speaker.png"
-                                alt="Speaker: Azure Community Conference 2021" width="100" height="100"/>
-                              AzConf 2021
+                            <img src="https://azconfdev.blob.core.windows.net/azbadges/speaker.png"
+                              alt="Speaker: Azure Community Conference 2021" width="100" height="100" />
+                            AzConf 2021
                           </a>
                         </center>
                       </td>
                       <td>
                         <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
-                          <img src="https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Files%20and%20PDFs/Certifications/CSM/SCR20146-Seals-Final-CSM.jpg"
+                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/csm.png"
                             alt="Certified Scrum Master" width="100" height="100" />
                           Certified Scrum Master
-                      </a>
+                        </a>
                       </td>
                     </tr>
                   </table>
