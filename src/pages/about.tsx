@@ -47,8 +47,8 @@ const About: React.FC = () => (
             <div className="post-content">
               <p>
                 Hi I am Dushyant Priyadarshee.
-                Software Engineer with passion for agile practices, DevOps, Microsoft technologies and all things Azure.
-                Currently learning Gatsby, Node.js and React.js. Hence this blog.
+                Software Engineer with passion for agile practices, cloud , DevOps, Microsoft technologies and all things Azure.
+                Now diving into other clouds such as AWS and Digital Ocean.
 
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
