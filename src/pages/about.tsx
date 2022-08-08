@@ -75,8 +75,8 @@ const About: React.FC = () => (
                       <td><YourClaimBadge badgeId='9400517c-4b45-41ee-be94-757bb0241cc3' /></td>
                       <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
                       <td>
-                        <a href='https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/aws-partner-accreditation.png' target="_blank">
-                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/aws-partner-accreditation2.png"
+                        <a href='https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation.png' target="_blank">
+                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation2.png"
                             alt="AWS Partner: Accreditation (Technical)(Classroom)" width="75" height="100" />
                           <center>
                             AWS (Technical)
@@ -96,7 +96,7 @@ const About: React.FC = () => (
                       </td>
                       <td>
                         <a href='https://www.dropbox.com/s/id2arl0ud63r464/ScrumMaster_DP_ScrumAlliance_CSM_Certificate.pdf' target="_blank">
-                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/badge-updates/src/content/img/badges/csm.png"
+                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/csm.png"
                             alt="Certified Scrum Master" width="100" height="100" />
                           Certified Scrum Master
                         </a>
