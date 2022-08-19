@@ -8,14 +8,14 @@ tags: ["Azure", "All"]
 draft: false
 ---
 # Introduction
-Azure policy is a service on Azure which helps us achieve organisation-wide resource governance by creating policies in Azure to govern every existing or future resource deployed. I was investigating if we can use this to reduce workload on our infrastructure deployment and automate connectivity.
+Azure policy is a service on Azure which helps us achieve organisation-wide resource governance by creating policies in Azure to govern every existing or future resource deployed. I was investigating if we can use this to reduce the workload on our infrastructure deployment and automate connectivity.
 
-The overall idea is that use a policy definition to create virtual networkg peering between hub and spokes.
+The overall idea is that use a policy definition to create a virtual network peering between hub and spokes.
 
 
 # Hub-spoke network topology
 
-The [hub-spoke model](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) is a general network topology used, mainly if we want a hybrid setup. There will be a hub virtual network acting as the central point of connectivity to on-premises network. Spoke virtual networks are used to isolate workloads in their own virtual networks. Two virtual networks can be connected using something called virtual network peering.
+The [hub-spoke model](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) is a general network topology used, mainly if we want a hybrid setup. There will be a hub virtual network acting as the central point of connectivity to the on-premises network. Spoke virtual networks are used to isolate workloads in their virtual networks. Two virtual networks can be connected using something called virtual network peering.
 
 So in this post, we can assume that the hub virtual network already exists. And we have multiple development environment virtual networks being deployed on demand. The hub can be RBAC restrictions regarding if those deployment users and processes have access. This is where azure policy steps in.
 
@@ -27,7 +27,7 @@ I had to refresh my azure policy memory and the following video helped a lot.
 
 # Policy definition
 
-After a few trial and error this is the policy definition that finally worked
+After a few trials and error, this is the policy definition that finally worked
 
 ```
 {
@@ -120,16 +120,16 @@ After a few trial and error this is the policy definition that finally worked
 }
 ```
 
-The definition above creates virtual network peering with the hub virtual network for every new virtual network deployed.
-The parameters section (I am sure can optimized) automatically gets the name and id of the new virtual network being deployed and the hub details are hardcoded.
+The definition above creates a virtual network peering with the hub virtual network for every new virtual network deployed.
+The parameters section (which I am sure can be optimized) automatically gets the name and id of the new virtual network being deployed and the hub details are hard coded.
 
-## Testing tips
+## Testing Tips
 ### Patience
-Testing policy takes its time to get applied. It is difficult to predict when it has got applied, so I normally had to wait 10-15mins before checking if it has worked. Officially Azure portal will says it can take upto 30mins and yes it can.
+Azure policies take time to get applied. It is difficult to predict when it has got applied, so I normally had to wait 10-15mins before checking if it has worked. Officially Azure portal will say it can take up to 30mins and yes it can.
 ### ARM
-Test the `deployment` section by deploying outside of policy definition. Some of the errors during deployment can take long to show up.
+Test the `deployment` section by deploying outside of the policy definition. Some of the errors during deployment can take 5-10mins or longer to show up.
 ### Activity log
-Check activity log of resource group to spot `deployIfNotExists` and if it has succeeded. It normally should give a useful error message if failed.
+Check the activity log of the resource group to spot `deployIfNotExists` and if it has succeeded. It normally should give a useful error message if failed.
 
 # Conclusion
 Hope this was useful and saved you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
