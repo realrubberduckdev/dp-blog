@@ -48,8 +48,6 @@ const About: React.FC = () => (
               <p>
                 Hi I am Dushyant Priyadarshee.
                 Software Engineer with passion for agile practices, cloud , DevOps, Microsoft technologies and all things Azure.
-                Now diving into other clouds such as AWS and Digital Ocean.
-
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
                 <br /><br />
