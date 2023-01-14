@@ -52,6 +52,19 @@ const PublicSpeaking: React.FC = () => (
                 or event happening, do let me know, I will try to join in to listen.
                 <br />
                 <br />
+                <h2>2023</h2>
+                <ul>
+                <li>
+                    <a href="https://www.fujitsu.com/global/services/multi-cloud/cloud-services/springboard/" target="_blank">
+                    How to use Fujitsu Springboard™ for Microsoft Azure
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://docs.google.com/presentation/d/17MpWDYMgnIdHShm8EaQbQdl9BtHQ830o/edit?usp=drivesdk&ouid=112397321672624446636&rtpof=true&sd=true" target="_blank">
+                    Introduction to DevOps
+                    </a>
+                  </li>
+                </ul>
                 <h2>2022</h2>
                 <ul>
                 <li>
