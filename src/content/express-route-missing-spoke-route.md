@@ -77,6 +77,21 @@ The issue we found is that the spokes were not using the hub's gateway. This is 
 
 <br/>
 
+Once we have got the spokes to use the hub's gateway, the resulting route table for ExpressRoute should show a `NextHop` for Spoke vnet IP ranges as below. The NextHop being the hub vnet gateway IP.
+
+```
+Get-AzExpressRouteCircuitRouteTable -DevicePath Primary -ExpressRouteCircuitName my-express-route -PeeringType AzurePrivatePeering -ResourceGroupName my-rg
+
+Network : 162.20.0.0/21
+NextHop : 10.300.120.250
+
+Network : 10.20.0.0/22
+NextHop : 10.10.0.10
+
+Network : 10.30.0.0/22
+NextHop : 10.10.0.10
+```
+
 So the solution is to set `Use the remote virtual network's gateway or Route Server` using your favourite IaC.
 
 # Conclusion
