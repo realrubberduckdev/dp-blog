@@ -53,7 +53,7 @@ But then if we run
 Test-NetConnectivity -computer 10.200.20.30 -port 443
 ```
 
-we should expect a failure. This is because port 443 is now specificly allowed. But! But! But! the command succeeds. Added to this astonishment is that no logs appear in the firewall logs which show the port 443 request was allowed.
+we should expect a failure. This is because port 443 is not allowed. But! But! But! the command succeeds. Added to this astonishment is that no logs appear in the firewall logs which show the port 443 request was allowed.
 
 What is going on! (◎_◎;)
 
