@@ -8,7 +8,7 @@ tags: ["Azure", "All"]
 draft: false
 ---
 # Introduction
-After an Azure ExpressRoute is setup we can use [Get-AzExpressRouteCircuitRouteTable](https://learn.microsoft.com/en-us/powershell/module/az.network/get-azexpressroutecircuitroutetable) Cmdlet to view what routes are advertised on the ExpressRoute. It means, what routes can a data packet reach if it took that route. And those data packets take the ExpressRoute only when the destination is available on the route table.
+After an Azure ExpressRoute is setup we can use [Get-AzExpressRouteCircuitRouteTable](https://learn.microsoft.com/en-us/powershell/module/az.network/get-azexpressroutecircuitroutetable) Cmdlet to view what routes are advertised on the ExpressRoute. It lists the destinations a data packet can reach if it took that route. And those data packets take the ExpressRoute only when the destination is available on the route table.
 
 Recently, my team and I came across this issue where a certain spoke IP range wasn't listed on the route table.
 
@@ -34,7 +34,7 @@ But when we run the `Get-AzExpressRouteCircuitRouteTable` Cmdlet we see
 
 # The issue
 
-After setting up the infrastucture as described above, traffic was not flowing from on-premises to a resource on Spoke1. The issue was understandable as the ExpressRoute circuit table wasn't showing an entries for the spokes.
+After setting up the infrastructure as described above, traffic was not flowing from on-premises to a resource on Spoke1. The issue was understandable as the ExpressRoute circuit table wasn't showing entries for the spokes.
 
 i.e.
 
@@ -46,7 +46,7 @@ NextHop : 10.300.120.250
 
 ```
 
-So in the output above, we see the ExpressRoute knows that to get to the on-prem resources, it can use a next hop (which in this case is the ExpressRoute private peering). But it doesn't know how to get to Azure resources from on-prem. This could manifest in multiple ways while testing, such as:
+So in the output above, we see that ExpressRoute knows that to get to the on-prem resources, it can use a next hop (which in this case is the ExpressRoute private peering). But it doesn't know how to get to Azure resources from on-prem. This could manifest in multiple ways while testing, such as:
 
 ```
 Invoke-WebRequest : The underlying connection was closed: The connection was closed unexpectedly.
@@ -62,14 +62,14 @@ Now we understand the reason, let's see what is the solution.
 
 # Solution - check vnet peering
 
-The hub to spoke vnet peering should looks like this:
+The hub to spoke vnet peering should look like this:
 
 <br/>
 
 ![hub to spoke vnet peering](./img/express-route-missing-spoke-route/hub-spoke-peering.png)
 
 <br/>
-The issue we found is that the spokes were not using the hub's gateway. This is a setting we need on the spoke side of vnet peering. And by default it is set to none.
+The issue we found is that the spokes were not using the hub's gateway. This is a setting we need on the spoke side of vnet peering. And by default, it is set to none.
 
 <br/>
 
