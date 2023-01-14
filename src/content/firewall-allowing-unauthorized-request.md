@@ -69,6 +69,6 @@ Regarding logging, records are logged only when a specific rule match occurs. Th
 So overall, the firewall is behaving as expected and denying traffic. But it is not logging it as there is no specific rule match.
 
 # Conclusion
-One way to get uniform results and gain more confidence will be to have a low priority blanket deny all firewall policy. So if no allows are matched, a request gets denied and then logged in firewall logs. Although it took me a while to figure this out, was relieved that no unauthorized requests were being allowed by the firewall.
+One way to get uniform results and gain more confidence will be to have a low priority blanket deny all firewall policy. So if no allows are matched, a request gets denied and then logged in firewall logs. Although it took me a while to figure this out, was relieved that **no unauthorized requests were being allowed by the firewall**.
 
 Hope this was useful and saved you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
