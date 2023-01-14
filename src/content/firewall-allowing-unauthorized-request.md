@@ -58,7 +58,7 @@ we should expect a failure. This is because port 443 is now specificly allowed. 
 What is going on! (◎_◎;)
 
 - Did the firewall just allow an authorized request?
-- What happend to the log?
+- What happened to the log?
 
 # The explanation
 TCP ping is a unique use case where if there is no allowed rule, the Firewall itself responds to the client's TCP ping request even though the TCP ping doesn't reach the target IP address/FQDN. `Test-NetConnection` does a TCP ping. This is [documented](https://learn.microsoft.com/en-us/azure/firewall/firewall-faq#why-can-a-tcp-ping-and-similar-tools-successfully-connect-to-a-target-fqdn-even-when-no-rule-on-azure-firewall-allows-that-traffic).
@@ -68,6 +68,6 @@ Regarding logging, records are logged only when a specific rule match occurs. Th
 So overall, the firewall is behaving as expected and denying traffic. But it is not logging it as there is no specific rule match.
 
 # Conclusion
-One way to get uniform results and gain more confidence will be to have a low priority blanket deny all firewall policy. So if no allows are matched, a request gets denied and then logged in firewall logs. Although it took me a while to figure this out, was relieved that **no unauthorized requests were being allowed by the firewall**.
+One way to get uniform results and gain more confidence will be to have a low priority blanket deny all firewall policy. So, if no allows are matched, a request gets denied and then logged in firewall logs. Although it took me a while to figure this out, was relieved that **no unauthorized requests were being allowed by the firewall**.
 
 Hope this was useful and saved you some time. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
