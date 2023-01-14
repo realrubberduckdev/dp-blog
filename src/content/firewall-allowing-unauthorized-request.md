@@ -12,7 +12,6 @@ draft: false
 
 But things get a bit weird, let's see how.
 
-
 # Anomaly?
 
 With the assumption that Azure firewall is denying all requests by default, let's setup the following policy
