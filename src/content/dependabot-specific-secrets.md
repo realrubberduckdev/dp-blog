@@ -34,7 +34,7 @@ The [github workflow](https://github.com/realrubberduckdev/dp-blog/blob/a3e2177a
           ###### End of Repository/Build Configurations ######
 ```
 
-This means that it needs a valid access token to be able to create resources on Azure during the workflow execution. And it is unable to find that secret and hences the error:
+This means that it needs a valid access token to be able to create resources on Azure during the workflow execution. And it is unable to find that secret and hence the error:
 
 ```
 deployment_token was not provided.
@@ -43,7 +43,7 @@ An unknown exception has occurred
 ```
 
 # The solution
-Took me a few search attempts to locate [this comment on GitHub](https://github.com/Azure/static-web-apps/issues/788#issuecomment-1216570180). Essentially, dependabot doesn't use the default set of secrets, rather we need to explicitly provide a set of secrets for it to use. It makes sense, we won't want an app sitting outside of our repo to have access to repo/organization secrets.
+Took me a few search attempts to locate [this comment on GitHub](https://github.com/Azure/static-web-apps/issues/788#issuecomment-1216570180). Essentially, dependabot doesn't use the default set of secrets, rather we need to explicitly provide a set of secrets for it to use. It makes sense, we don't want an app sitting outside of our repo to have access to repo/organization secrets.
 
 The solution is to provide the required secrets for dependabot to use:
 
