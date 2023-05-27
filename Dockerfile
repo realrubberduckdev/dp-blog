@@ -3,10 +3,10 @@
 
 FROM node:16.14 AS builder
 WORKDIR /dpblog
-RUN npm i -g gatsby-cli
 COPY package*.json ./
 COPY yarn.lock ./
 RUN yarn install --immutable --immutable-cache --check-cache
+RUN npm i -g gatsby-cli@3.15.0
 COPY . .
 RUN gatsby build
 
