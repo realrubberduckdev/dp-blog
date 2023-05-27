@@ -1,7 +1,7 @@
 # This is closest to what happens in github workflow. So useful for local checks
 # Check LocalDockerTest.ps1 to run and verify
 
-FROM node:16.14 AS builder
+FROM node:16.20 AS builder
 WORKDIR /dpblog
 COPY package*.json ./
 COPY yarn.lock ./
