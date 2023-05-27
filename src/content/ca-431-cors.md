@@ -8,7 +8,7 @@ tags: ["Kestrel", "All"]
 draft: false
 ---
 # Introduction
-This post is about an error over which I spent hours trying to get anywhere, until my colleague [Sebastian Wiejas](https://www.linkedin.com/in/sebastian-wiejas-35a4771b2/) spotted the issue and suggested the solution.
+This post is about an error over which I spent hours trying to get anywhere until my colleague [Sebastian Wiejas](https://www.linkedin.com/in/sebastian-wiejas-35a4771b2/) spotted the issue and suggested the solution.
 
 # Overall scenario
 
@@ -22,7 +22,7 @@ Remote Address: 25.86.295.132:443
 Referrer Policy: strict-origin-when-cross-origin
 ```
 
-Further investigating into Http 431 status code, it says [431 Request Header Fields Too Large](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431), that implies we are sending too many headers or the something is limiting our allowed header count.
+Further investigating into Http 431 status code, it says [431 Request Header Fields Too Large](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431), which implies we are sending too many headers or something is limiting our allowed header count.
 
 # The solution or maybe the workaround
 Given it is a dotnet app and we know from the deployment image that it is using [kestrel web server](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-7.0), so we investigated further into Kestrel settings.
