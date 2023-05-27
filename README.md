@@ -9,7 +9,7 @@ This is a static blog generator and starter gatsby repo. A port of [Casper](http
 ### One time installs
 Ignore if already installed.
 
-*Only builds with nodejs 16.14*
+**Only builds with nodejs 16.14**
 Use [chocolatey](https://community.chocolatey.org/packages/nodejs/16.14.2) to install it or use docker build instead if cannot install the older 14.2 nodejs version for some reason.
 
 ```
