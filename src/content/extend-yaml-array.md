@@ -58,7 +58,7 @@ parameters:
 In our template, we have 3 stages. We pass in dependencies into the template so that the docker push can check a previous step, say a test stage, has completed before it can trigger.
 Complexity arises regarding dependency of DockerPush as it needs to depend on an array of stages that has been passed in as well as a known DockerImageScan stage which is within the template. How do we merge or add this value into the provided array in azure pipelines yaml!
 
-# The solution or maybe the workaround
+# The solution
 The solution that worked is based on a [great idea provided on stackoverflow](https://stackoverflow.com/a/66894872/1228479).
 
 ```
