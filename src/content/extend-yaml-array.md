@@ -8,7 +8,7 @@ tags: ["Azure DevOps", "All"]
 draft: false
 ---
 # Introduction
-[Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) is a continuous integration and continuous delivery (CI/CD) service that helps you automate the building, testing, and deploying of your code to any target environment. I like using the yaml pipelines so that we are practicing true [GitOps](https://about.gitlab.com/topics/gitops/).
+[Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) is a continuous integration and continuous delivery (CI/CD) service that helps you automate the building, testing, and deploying of your code to any target environment. I like using the yaml pipelines so that we are practising true [GitOps](https://about.gitlab.com/topics/gitops/).
 
 # Overall scenario
 
@@ -47,7 +47,7 @@ parameters:
           steps:
           - task: Docker@2
             name: DockerPush
-            displayName: Push image to container registry
+            displayName: Push the image to the container registry
             inputs:
               repository: MyRepository
               command: Push
@@ -55,11 +55,11 @@ parameters:
               tags: tag1
 ```
 
-In our template, we have 3 stages. We pass in dependencies into the template so that the docker push can check a previous step, say a test stage, has completed before it can trigger.
-Complexity arises regarding dependency of DockerPush as it needs to depend on an array of stages that has been passed in as well as a known DockerImageScan stage which is within the template. How do we merge or add this value into the provided array in azure pipelines yaml!
+In our template, we have 3 stages. We pass in dependencies into the template so that the docker push can check a previous step, say a test stage, has been completed before it can trigger.
+Complexity arises regarding the dependency of DockerPush as it needs to depend on an array of stages that have been passed in as well as a known DockerImageScan stage which is within the template. How do we merge or add this value into the provided array in Azure pipelines yaml?
 
 # The solution
-The solution that worked is based on a [great idea provided on stackoverflow](https://stackoverflow.com/a/66894872/1228479).
+The solution that worked is based on a [great idea provided on Stackoverflow](https://stackoverflow.com/a/66894872/1228479).
 
 ```
 - stage: DockerPush
@@ -69,8 +69,8 @@ The solution that worked is based on a [great idea provided on stackoverflow](ht
         - DockerImageScan
 ```
 
-Instead of performing any array manipulation, we just loop through it and present the values to the `DockerPush` `dependsOn` parameter. This the stage can now depend on whatever the consumer has provided as well as the known stage within the pipeline template.
+Instead of performing any array manipulation, we just loop through it and present the values to the `DockerPush` `dependsOn` parameter. This stage can now depend on whatever the consumer has provided as well as the known stage within the pipeline template.
 
 # Conclusion
-Although the trick is quite simple, took hours to get to. Mainly the feedback cycle is slow with azure pipelines. There is hope though, given such a feature is in [preview now](https://developercommunity.visualstudio.com/t/ability-to-test-yaml-builds-locally/366517).
-Overall, hope this post helps you out with azure pipelines and happy CI CD to you. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
+Although the trick is quite simple, took hours to get to. Mainly the feedback cycle is slow with Azure pipelines. There is hope though, given such a feature is in [preview now](https://developercommunity.visualstudio.com/t/ability-to-test-yaml-builds-locally/366517).
+Overall, hope this post helps you out with Azure pipelines and happy CI CD to you. Please do share your learnings. If you have any thoughts or comments please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
