@@ -8,10 +8,10 @@ tags: ["Docker", "All"]
 draft: false
 ---
 # Introduction
-There a [nice post](https://dantehranian.wordpress.com/2015/03/25/how-should-i-get-application-configuration-into-my-docker-containers/) on the many available ways of passing in application configuration into a docker container. Here is another one, which is similar to the ones listed in the post but still possibly stands out as a different technique. 
+There is a [nice post](https://dantehranian.wordpress.com/2015/03/25/how-should-i-get-application-configuration-into-my-docker-containers/) on the many available ways of passing in application configuration into a docker container. Here is another one, which is similar to the ones listed in the post but still possibly stands out as a different technique. 
 
 # App config via entrypoint
-The idea is that we pass in environment variables to a script that runs as the container [entrypoint](https://docs.docker.com/engine/reference/builder/#entrypoint). This `entrypoint` script generates a settings json file for the application to use as its configuration.
+The idea is that we pass in environment variables to a script that runs as the container [entrypoint](https://docs.docker.com/engine/reference/builder/#entrypoint). This `entrypoint` script generates a settings JSON file for the application to use as its configuration.
 
 Docker file with nginx base (can be any other base, but this example is nginx specific)
 ```
@@ -25,7 +25,7 @@ ENTRYPOINT ["sh","/src/app/settings.sh"]
 The `settings.sh`
 ```
 #!/bin/sh
-# expecting these variables are set via envronment
+# expecting these variables are set via environment
 echo "{ \"SETTING1\": \"$SETTING1\", \"SETTING2\": \"$SETTING2\" }" > settings.json
 
 # display file to screen for verification
@@ -37,19 +37,19 @@ exec nginx -g "daemon off;"
 echo "finished running nginx command"
 ```
 
-The `exec nginx -g "daemon off;"` is the crucial bit. As we are providing an entrypoint, the entrypoint of base image won't run. So we need to do what we expect out of the base.
+The `exec nginx -g "daemon off;"` is the crucial bit. As we are providing an entrypoint, the entrypoint of the base image won't run. So we need to do what we expect out of the base.
 
 Docker build, say we call this image `dockerpoc`
 ```
 docker build -t dockerpoc:1.0 --no-cache .
 ```
 
-Finally we pass in the required values via environment variables during docker run
+Finally, we pass in the required values via environment variables during the docker run.
 ```
 docker run -e SETTING1='setting1-value' -e SETTING2='setting2-value' -it dockerpoc:1.0 
 ```
 
-This creates the configuration for the application in a json format at docker container runtime.
+This creates the configuration for the application in a JSON format at the docker container runtime.
 
 # Conclusion
 Hope this was useful and saves you some time. Please do share your learnings. If you have any thoughts or comments, please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
