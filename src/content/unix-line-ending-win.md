@@ -32,3 +32,6 @@ rubberduck@MYUNIXMACHINE:/mnt/c$ dos2unix script.sh
 # Conclusion
 There might be other better ways of achieving this, and I am still learning the Unix ways of life. If you are aware of an easier technique, please share.
 Hope this was useful and saves you some time. Please do share your learnings. If you have any thoughts or comments, please do get in touch with me on Twitter [@rubberduckdev](https://twitter.com/rubberduckdev). Or use the Disqus plugin below.
+
+### Credits
+Banner by [Gabriel Heinzer](https://unsplash.com/@6heinz3r)
