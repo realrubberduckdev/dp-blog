@@ -20,7 +20,7 @@ The standard way of calling the task, as shown below, led to the unwanted manipu
 ```yaml
 - task: DownloadPipelineArtifact@2
   inputs:
-    artifactName: 'AzPilot'
+    artifactName: 'MyFavouriteArtifact'
 ```
 
 ## The Solution:
@@ -28,7 +28,7 @@ The workaround involves using the shorthand version of the task, which remarkabl
 
 ```yaml
 - download: current
-  artifact: AzPilot
+  artifact: MyFavouriteArtifact
 ```
 
 This simple adjustment in the way the task is invoked resolves the problem, ensuring that the downloaded artifact retains the intended structure without any unexpected string prefixes.
