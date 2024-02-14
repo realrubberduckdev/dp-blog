@@ -4,7 +4,7 @@ title: Resolving NU1301 when using Azure Artifacts
 image: img/restore-NU1301-error/banner.png
 author: Dushyant
 date: 2024-02-14T14:30:00.000Z
-tags: ["dotnet", "All"]
+tags: ["DevOps", "All"]
 draft: false
 ---
 
