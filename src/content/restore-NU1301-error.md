@@ -14,7 +14,7 @@ Before we delve into the solution, let's briefly understand what the NU1301 erro
 
 ### Step 1: Install the Azure Artifacts Credential Provider
 
-The Azure Artifacts Credential Provider is a tool that helps manage credentials for Azure Artifact based NuGet package sources. To install this provider, follow these steps at [docs](https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#setup)
+The Azure Artifacts Credential Provider is a tool that helps manage credentials for Azure Artifact based NuGet package sources. To install this provider, follow [docs](https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#setup).
 
 ### Step 2: Run `dotnet restore --interactive`
 
