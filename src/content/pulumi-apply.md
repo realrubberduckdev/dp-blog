@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Pulumi's Apply Method in C#
-image: img/pulumi-apply/banner.png
+image: img/pulumi-banner.png
 author: Dushyant
 date: 2024-01-11T10:30:00.000Z
 tags: ["Pulumi", "All"]
