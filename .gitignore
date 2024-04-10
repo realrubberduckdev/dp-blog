@@ -2,9 +2,6 @@
 # Node.js-Specific Ignores
 # =========================
 
-# Local script
-./LocalDockerTest.ps1
-
 # Build directory
 public/
 
