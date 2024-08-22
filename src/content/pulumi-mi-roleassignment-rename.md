@@ -105,7 +105,7 @@ class MyStack : Stack
         });
 
         // Role assignment must be renamed alongside the identity
-        var roleAssignment = new RoleAssignment("updatedRoleAssignment", new RoleAssignmentArgs
+        var roleAssignment = new DocumentDB.SqlResourceSqlRoleAssignment("updatedRoleAssignment", new DocumentDB.SqlResourceSqlRoleAssignmentArgs
         {
             PrincipalId = identity.PrincipalId,
             RoleDefinitionId = "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
