@@ -59,7 +59,12 @@ const About: React.FC = () => (
                       </th>
                     </tr>
                     <tr>
-                      <td><YourClaimBadge badgeId='5c12b822-23e2-48ce-a8a8-ee9b3dfd0533' /></td>
+                      <td>
+                        <a href='https://learn.microsoft.com/api/credentials/share/en-us/Dushyant/E1D9B98159DDEF3C?sharingId=EEE997BC5A971A1E' target="_blank">
+                          <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/c9ac25a299c90a573aff9e5a93df7f9e3ba1f764/src/content/img/badges/azure-solutions-architect-expert-600x600.png"
+                            alt="Microsoft Certified Azure Solutions Architect Expert" width="75" height="100" />
+                        </a>
+                      </td>
                       <td><YourClaimBadge badgeId='2dad0827-43f8-4560-92c8-fa6a1870964e' /></td>
                       <td><YourClaimBadge badgeId='1f7c1fd6-d4d8-4e14-9c95-88ea1da97bff' /></td>
                       <td><YourClaimBadge badgeId='029c4b06-604b-4ddb-a74a-fc4b137a9751' /></td>
