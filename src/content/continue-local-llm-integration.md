@@ -10,7 +10,7 @@ draft: false
 
 # Introduction
 
-In the age of AI, developers are increasingly looking for ways to integrate powerful language models into their workflows. While cloud-based solutions like OpenAI's GPT models are popular, there’s a growing demand for **offline, private, and fast alternatives**. This guide walks you through integrating a **locally running LLM** (DeepSeek R1 Distill LLaMA) with the [Continue](https://continue.dev) extension in Visual Studio Code.
+In the age of AI, developers are increasingly looking for ways to integrate powerful language models into their workflows. While cloud-based solutions like OpenAI's GPT models are popular, there’s a growing demand for **offline and private alternatives**. This guide walks you through integrating a **locally running LLM** (DeepSeek R1 Distill LLaMA) with the [Continue](https://continue.dev) extension in Visual Studio Code.
 
 ---
 
