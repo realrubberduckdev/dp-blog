@@ -8,7 +8,7 @@ import { css } from '@emotion/core';
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
-import YourClaimBadge from '../components/YourAcclaimBadge';
+import EmbeddedCredential from '../components/MsCertBadge';
 import Helmet from 'react-helmet';
 
 const PageTemplate = css`
@@ -46,7 +46,7 @@ const About: React.FC = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-                Hi I am Dushyant Priyadarshee.
+                I am Dushyant Priyadarshee.
                 Software Engineer with passion for agile practices, cloud , DevOps, Microsoft technologies and all things Azure.
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
@@ -59,19 +59,74 @@ const About: React.FC = () => (
                       </th>
                     </tr>
                     <tr>
-                      <td><YourClaimBadge badgeId='5c12b822-23e2-48ce-a8a8-ee9b3dfd0533' /></td>
-                      <td><YourClaimBadge badgeId='2dad0827-43f8-4560-92c8-fa6a1870964e' /></td>
-                      <td><YourClaimBadge badgeId='1f7c1fd6-d4d8-4e14-9c95-88ea1da97bff' /></td>
-                      <td><YourClaimBadge badgeId='029c4b06-604b-4ddb-a74a-fc4b137a9751' /></td>
-                      <td><YourClaimBadge badgeId='f563d775-b613-45af-8737-ae54364b7776' /></td>
-                      <td><YourClaimBadge badgeId='a0d71cdd-ac11-4067-b12f-7afbac1cef61' /></td>
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="SOLARCH2026"
+                          certificateImgAltText="Microsoft Certified: Azure Solutions Architect Expert"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="SECENG2025"
+                          certificateImgAltText="Microsoft Certified: Azure Security Engineer Associate"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/1ad16b6f-2c71-4a2e-ae74-ec69c4766039/azure-security-engineer-associate600x600.png" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVOPS2026"
+                          certificateImgAltText="Microsoft Certified: DevOps Engineer Expert"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" />
+                      </td>
+
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="AB6050AA7FB3F9C7"
+                          certificateImgAltText="Microsoft Certified: Azure Network Engineer Associate"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png" />
+                      </td>
+
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVASSOC2026"
+                          certificateImgAltText="Microsoft Certified: Azure Developer Associate"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/63316b60-f62d-4e51-aacc-c23cb850089c/azure-developer-associate-600x600.png" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVLEGACY2020"
+                          certificateName="(Legacy)"
+                          certificateImgAltText="Microsoft Certified: Azure Developer Associate (Legacy)"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/92e0618b-8002-4868-9e88-794a33aeb3b5/azure-developer-associate-600x600.png" />
+                      </td>
                     </tr>
+
                     <tr>
-                      <td><YourClaimBadge badgeId='5cb8bd57-d88f-477d-bb53-4a43d842bc95' /></td>
-                      <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
-                      <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
-                      <td><YourClaimBadge badgeId='9400517c-4b45-41ee-be94-757bb0241cc3' /></td>
-                      <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="AZFUN2019"
+                          certificateImgAltText="Microsoft Certified: Azure Fundamentals"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="CSPROG2015"
+                          certificateImgAltText="Microsoft Specialist: Programming in C#"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/78e39333-d0db-4931-b231-13bdb37040cc/Programming_in_C_23-01.png" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="MCPRO2015"
+                          certificateName="Microsoft Certified Professional"
+                          certificateImgAltText="Microsoft Certified Professional"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-general-badge.svg" />
+                      </td>
                       <td>
                         <a href='https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation.png' target="_blank">
                           <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation2.png"
@@ -81,8 +136,6 @@ const About: React.FC = () => (
                           </center>
                         </a>
                       </td>
-                    </tr>
-                    <tr>
                       <td>
                         <center>
                           <a href='https://badge.azconf.dev/badge/ef5e192c-bd66-4004-900f-725e6bfdd1d0' target="_blank">
