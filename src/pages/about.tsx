@@ -9,6 +9,7 @@ import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/p
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
 import YourClaimBadge from '../components/YourAcclaimBadge';
+import EmbeddedCredential from '../components/MsCertBadge';
 import Helmet from 'react-helmet';
 
 const PageTemplate = css`
@@ -59,17 +60,70 @@ const About: React.FC = () => (
                       </th>
                     </tr>
                     <tr>
-                      <td><YourClaimBadge badgeId='5c12b822-23e2-48ce-a8a8-ee9b3dfd0533' /></td>
-                      <td><YourClaimBadge badgeId='2dad0827-43f8-4560-92c8-fa6a1870964e' /></td>
-                      <td><YourClaimBadge badgeId='1f7c1fd6-d4d8-4e14-9c95-88ea1da97bff' /></td>
-                      <td><YourClaimBadge badgeId='029c4b06-604b-4ddb-a74a-fc4b137a9751' /></td>
-                      <td><YourClaimBadge badgeId='f563d775-b613-45af-8737-ae54364b7776' /></td>
-                      <td><YourClaimBadge badgeId='a0d71cdd-ac11-4067-b12f-7afbac1cef61' /></td>
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="AB6050AA7FB3F9C7"
+                          certificateName="Microsoft Certified: Azure Network Engineer Associate"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="SECENG2025"
+                          certificateName="Microsoft Certified: Azure Security Engineer Associate"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVASSOC2026"
+                          certificateName="Microsoft Certified: Azure Developer Associate"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVOPS2026"
+                          certificateName="Microsoft Certified: DevOps Engineer Expert"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="SOLARCH2026"
+                          certificateName="Microsoft Certified: Azure Solutions Architect Expert"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="AZFUN2019"
+                          certificateName="Microsoft Certified: Azure Fundamentals"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" />
+                      </td>
                     </tr>
                     <tr>
-                      <td><YourClaimBadge badgeId='5cb8bd57-d88f-477d-bb53-4a43d842bc95' /></td>
-                      <td><YourClaimBadge badgeId='87f1fddf-1bd3-4c18-b85b-496e53e47dc4' /></td>
-                      <td><YourClaimBadge badgeId='62c4e27d-759a-4673-b757-31e57826a30b' /></td>
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="CSPROG2015"
+                          certificateName="Microsoft Specialist: Programming in C#"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-specialist-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="MCPRO2015"
+                          certificateName="Microsoft Certified Professional"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-professional-badge.svg" />
+                      </td>
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="DEVLEGACY2020"
+                          certificateName="Microsoft Certified: Azure Developer Associate (Legacy)"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" />
+                      </td>
+
                       <td><YourClaimBadge badgeId='9400517c-4b45-41ee-be94-757bb0241cc3' /></td>
                       <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
                       <td>
