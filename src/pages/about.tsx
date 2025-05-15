@@ -8,7 +8,6 @@ import { css } from '@emotion/core';
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
-import YourClaimBadge from '../components/YourAcclaimBadge';
 import EmbeddedCredential from '../components/MsCertBadge';
 import Helmet from 'react-helmet';
 
