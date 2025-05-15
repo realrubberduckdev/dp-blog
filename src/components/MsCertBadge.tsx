@@ -27,7 +27,7 @@ const MsCertBadge: React.FC<MsCertBadgeProps> = ({
                     width={width} height={height} />
             </a>
             {certificateName && (
-                <p style={{ fontSize: 'small', margin: '8px 0' }}>{certificateName}</p>
+                <p style={{ fontSize: 'small', margin: '8px 0', textAlign: 'center' }}>{certificateName}</p>
             )}
         </div>
     );

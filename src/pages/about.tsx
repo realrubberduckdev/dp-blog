@@ -47,7 +47,7 @@ const About: React.FC = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-                Hi I am Dushyant Priyadarshee.
+                I am Dushyant Priyadarshee.
                 Software Engineer with passion for agile practices, cloud , DevOps, Microsoft technologies and all things Azure.
                 You can check my linkedin profile <a href='https://www.linkedin.com/in/dpriyadarshee/' target="_blank">here</a>.
 
@@ -62,9 +62,9 @@ const About: React.FC = () => (
                     <tr>
                       <td>
                         <EmbeddedCredential
-                          certificateId="AB6050AA7FB3F9C7"
-                          certificateImgAltText="Microsoft Certified: Azure Network Engineer Associate"
-                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png" />
+                          certificateId="SOLARCH2026"
+                          certificateImgAltText="Microsoft Certified: Azure Solutions Architect Expert"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" />
                       </td>
 
                       <td>
@@ -76,6 +76,22 @@ const About: React.FC = () => (
 
                       <td>
                         <EmbeddedCredential
+                          certificateId="DEVOPS2026"
+                          certificateImgAltText="Microsoft Certified: DevOps Engineer Expert"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" />
+                      </td>
+
+
+                      <td>
+                        <EmbeddedCredential
+                          certificateId="AB6050AA7FB3F9C7"
+                          certificateImgAltText="Microsoft Certified: Azure Network Engineer Associate"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png" />
+                      </td>
+
+
+                      <td>
+                        <EmbeddedCredential
                           certificateId="DEVASSOC2026"
                           certificateImgAltText="Microsoft Certified: Azure Developer Associate"
                           certificateImgUrl="https://images.credly.com/size/340x340/images/63316b60-f62d-4e51-aacc-c23cb850089c/azure-developer-associate-600x600.png" />
@@ -83,49 +99,35 @@ const About: React.FC = () => (
 
                       <td>
                         <EmbeddedCredential
-                          certificateId="DEVOPS2026"
-                          certificateImgAltText="Microsoft Certified: DevOps Engineer Expert"
-                          certificateImgUrl="https://images.credly.com/size/340x340/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" />
+                          certificateId="DEVLEGACY2020"
+                          certificateName="(Legacy)"
+                          certificateImgAltText="Microsoft Certified: Azure Developer Associate (Legacy)"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/92e0618b-8002-4868-9e88-794a33aeb3b5/azure-developer-associate-600x600.png" />
                       </td>
+                    </tr>
 
-                      <td>
-                        <EmbeddedCredential
-                          certificateId="SOLARCH2026"
-                          certificateImgAltText="Microsoft Certified: Azure Solutions Architect Expert"
-                          certificateImgUrl="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" />
-                      </td>
-
+                    <tr>
                       <td>
                         <EmbeddedCredential
                           certificateId="AZFUN2019"
                           certificateImgAltText="Microsoft Certified: Azure Fundamentals"
                           certificateImgUrl="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" />
                       </td>
-                    </tr>
-                    <tr>
+
                       <td>
                         <EmbeddedCredential
                           certificateId="CSPROG2015"
-                          certificateName="Microsoft Specialist: Programming in C#"
-                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-specialist-badge.svg" />
+                          certificateImgAltText="Microsoft Specialist: Programming in C#"
+                          certificateImgUrl="https://images.credly.com/size/340x340/images/78e39333-d0db-4931-b231-13bdb37040cc/Programming_in_C_23-01.png" />
                       </td>
 
                       <td>
                         <EmbeddedCredential
                           certificateId="MCPRO2015"
                           certificateName="Microsoft Certified Professional"
-                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-professional-badge.svg" />
+                          certificateImgAltText="Microsoft Certified Professional"
+                          certificateImgUrl="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-general-badge.svg" />
                       </td>
-
-                      <td>
-                        <EmbeddedCredential
-                          certificateId="DEVLEGACY2020"
-                          certificateName="Microsoft Certified: Azure Developer Associate (Legacy)"
-                          certificateImgUrl="https://images.credly.com/size/340x340/images/92e0618b-8002-4868-9e88-794a33aeb3b5/azure-developer-associate-600x600.png" />
-                      </td>
-
-                      <td><YourClaimBadge badgeId='9400517c-4b45-41ee-be94-757bb0241cc3' /></td>
-                      <td><YourClaimBadge badgeId='aa2705f7-f843-4156-92ab-8cbdbd180265' /></td>
                       <td>
                         <a href='https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation.png' target="_blank">
                           <img src="https://raw.githubusercontent.com/realrubberduckdev/dp-blog/main/src/content/img/badges/aws-partner-accreditation2.png"
@@ -135,8 +137,6 @@ const About: React.FC = () => (
                           </center>
                         </a>
                       </td>
-                    </tr>
-                    <tr>
                       <td>
                         <center>
                           <a href='https://badge.azconf.dev/badge/ef5e192c-bd66-4004-900f-725e6bfdd1d0' target="_blank">
