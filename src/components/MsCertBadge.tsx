@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface MsCertBadgeProps {
-    certificateId: string;
+    certificateUrl: string;
     certificateName?: string;
     certificateImgUrl: string;
     certificateImgAltText: string;
@@ -10,18 +10,16 @@ interface MsCertBadgeProps {
 }
 
 const MsCertBadge: React.FC<MsCertBadgeProps> = ({
-    certificateId,
+    certificateUrl,
     certificateName,
     certificateImgUrl,
     certificateImgAltText,
     width = '148px',
     height = '148px',
 }) => {
-    const url = `https://learn.microsoft.com/api/credentials/share/en-us/Dushyant/${certificateId}`;
-
     return (
         <div style={{ border: '1px solid #ccc', borderRadius: '8px', overflow: 'hidden' }}>
-            <a href={url} target="_blank" rel="noopener noreferrer">
+            <a href={certificateUrl} target="_blank" rel="noopener noreferrer">
                 <img src={certificateImgUrl}
                     alt={certificateImgAltText}
                     width={width} height={height} />
