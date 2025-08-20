@@ -1,7 +1,7 @@
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { darken, lighten } from 'polished';
 import * as React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import { colors } from '../styles/colors';
 // @ts-ignore
@@ -9,6 +9,7 @@ import favicon from '../../src/favicon.ico';
 
 interface IndexProps {
   className?: string;
+  children?: React.ReactNode;
 }
 
 const GlobalStyles = css`

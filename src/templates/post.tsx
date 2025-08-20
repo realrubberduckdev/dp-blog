@@ -1,10 +1,10 @@
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as _ from 'lodash';
 import { setLightness } from 'polished';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
 import AuthorCard from '../components/AuthorCard';
