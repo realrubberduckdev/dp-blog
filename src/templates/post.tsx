@@ -288,9 +288,10 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
 
               {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
                 <PostFullImage>
-                  <Img
+                  <GatsbyImage
                     style={{ height: '100%' }}
-                    fluid={post.frontmatter.image.childImageSharp.fluid}
+                    image={getImage(post.frontmatter.image.childImageSharp)!}
+                    alt={post.frontmatter.title || ''}
                   />
                 </PostFullImage>
               )}
@@ -301,7 +302,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
 
               <PostFullFooter>
                 <AuthorCard author={post.frontmatter.author} />
-                <PostFullFooterRight authorId={post.frontmatter.author.id} />
+                {post.frontmatter.author && <PostFullFooterRight authorId={post.frontmatter.author.id} />}
               </PostFullFooter>
             </article>
           </div>
@@ -315,8 +316,8 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                 <ReadNextCard tags={post.frontmatter.tags} relatedPosts={props.data.relatedPosts} />
               )}
 
-              {props.pageContext.prev && <PostCard post={props.pageContext.prev} />}
-              {props.pageContext.next && <PostCard post={props.pageContext.next} />}
+              {props.pageContext.prev && props.pageContext.prev.fields && <PostCard post={props.pageContext.prev} />}
+              {props.pageContext.next && props.pageContext.next.fields && <PostCard post={props.pageContext.next} />}
             </ReadNextFeed>
           </div>
         </aside>

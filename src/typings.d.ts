@@ -25,3 +25,6 @@ declare module 'rehype-react' {
   }
   export default RehypeReact;
 }
+
+// Emotion CSS prop
+/// <reference types="@emotion/react/types/css-prop" />

@@ -9,7 +9,7 @@ import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/p
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
 import MsCertBadge from '../components/MsCertBadge';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const PageTemplate = css`
   .site-main {
