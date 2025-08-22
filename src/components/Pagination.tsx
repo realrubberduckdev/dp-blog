@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { darken } from 'polished';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { colors } from '../styles/colors';
 
@@ -44,7 +44,6 @@ const navCss = css`
     &:hover {
       text-decoration: none;
     }
-  }
 `;
 
 const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, numPages }) => {

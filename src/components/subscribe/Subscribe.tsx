@@ -1,7 +1,7 @@
 import { lighten } from 'polished';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { colors } from '../../styles/colors';
 import SubscribeForm from './SubscribeForm';
@@ -39,7 +39,6 @@ const SubscribeFormSection = styled.section`
     p {
       font-size: 1.6rem;
     }
-  }
 `;
 
 const SubscribeFormTitle = css`

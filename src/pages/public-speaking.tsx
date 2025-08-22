@@ -3,12 +3,12 @@ import Wrapper from '../components/Wrapper';
 import SiteNav from '../components/header/SiteNav';
 import { SiteHeader, outer, inner, SiteMain } from '../styles/shared';
 import * as React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { PostFullHeader, PostFullTitle, NoImage, PostFull } from '../templates/post';
 import { PostFullContent } from '../components/PostContent';
 import Footer from '../components/Footer';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const PageTemplate = css`
   .site-main {
@@ -22,7 +22,6 @@ const PageTemplate = css`
     margin-right: 0;
     margin-bottom: 0;
   }
-}
 `;
 
 const PublicSpeaking: React.FC = () => (

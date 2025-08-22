@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import SiteNavLogo from '../components/header/SiteNavLogo';
 import PostCard from '../components/PostCard';
@@ -110,10 +110,9 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
+                gatsbyImageData(width: 3720, placeholder: BLURRED)
+                  
                 }
-              }
             }
             author {
               id
@@ -121,9 +120,7 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
+                    gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
                   }
                 }
               }

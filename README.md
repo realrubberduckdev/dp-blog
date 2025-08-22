@@ -9,20 +9,20 @@ This is a static blog generator and starter gatsby repo. A port of [Casper](http
 ### One time installs
 Ignore if already installed.
 
-**Only builds with nodejs 16.14**
-Use [chocolatey](https://community.chocolatey.org/packages/nodejs/16.14.2) to install it or use docker build instead if cannot install the older 14.2 nodejs version for some reason.
+**Requires Node.js 20.0 or later**
+Use [nvm](https://github.com/nvm-sh/nvm) to install the latest LTS version, or use docker build instead.
 
 ```
 npm install --global yarn
-npm install --global gatsby-cli@3.15.0
+npm install --global gatsby-cli@5.14.0
 ```
 
 ### Local dev
 
 ```
 yarn install
-gatsby build
-gatsby develop
+yarn build
+yarn dev
 ```
 
 ## Docker build

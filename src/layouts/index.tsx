@@ -1,4 +1,4 @@
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { darken, lighten } from 'polished';
 import * as React from 'react';
 import Helmet from 'react-helmet';
@@ -9,6 +9,7 @@ import favicon from '../../src/favicon.ico';
 
 interface IndexProps {
   className?: string;
+  children?: React.ReactNode;
 }
 
 const GlobalStyles = css`
@@ -433,7 +434,6 @@ const GlobalStyles = css`
     h1 {
       font-size: 2.2rem;
     }
-  }
 
   h2 {
     margin: 1.5em 0 0.5em 0;
@@ -443,7 +443,6 @@ const GlobalStyles = css`
     h2 {
       font-size: 1.8rem;
     }
-  }
 
   h3 {
     margin: 1.5em 0 0.5em 0;
@@ -454,7 +453,6 @@ const GlobalStyles = css`
     h3 {
       font-size: 1.7rem;
     }
-  }
 
   h4 {
     margin: 1.5em 0 0.5em 0;
