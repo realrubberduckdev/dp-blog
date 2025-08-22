@@ -1,4 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import styled from '@emotion/styled';
 
@@ -14,7 +15,7 @@ const SubscribeOverlayLogo = styled.img`
 interface SiteNavLogoProps {
   logo?: {
     childImageSharp: {
-      fixed: any;
+      gatsbyImageData: any;
     };
   };
 }
@@ -28,15 +29,19 @@ const SubscribeLogo = () => (
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
             gatsbyImageData(width: 200, placeholder: BLURRED)
-              gatsbyImageData(width: 200, placeholder: BLURRED)
-            }
+          }
         }
+      }
     `}
     // tslint:disable-next-line:react-this-binding-issue
-    render={(data: SiteNavLogoProps) =>
-      data.logo && (
-        <SubscribeOverlayLogo src={data.logo.childImageSharp.fixed.src} alt={config.title} />
-      )}
+    render={(data: SiteNavLogoProps) => {
+      if (data.logo) {
+        const image = getImage(data.logo);
+        const imageSrc = image?.images?.fallback?.src || '';
+        return imageSrc ? <SubscribeOverlayLogo src={imageSrc} alt={config.title} /> : null;
+      }
+      return null;
+    }}
   />
 );
 

@@ -274,10 +274,12 @@ export const pageQuery = graphql`
         childImageSharp {
           gatsbyImageData(width: 3720, placeholder: BLURRED)
         }
+      }
       avatar {
         childImageSharp {
           gatsbyImageData(width: 200, placeholder: BLURRED)
         }
+      }
     }
     allMarkdownRemark(
       filter: { frontmatter: { draft: { ne: true } } },
@@ -297,6 +299,7 @@ export const pageQuery = graphql`
               childImageSharp {
                 gatsbyImageData(width: 3720, placeholder: BLURRED)
               }
+            }
             author {
               id
               bio

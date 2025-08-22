@@ -333,6 +333,7 @@ export const query = graphql`
       childImageSharp {
         gatsbyImageData(width: 200, placeholder: BLURRED)
       }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       htmlAst
@@ -347,6 +348,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData(width: 3720, placeholder: BLURRED)
           }
+        }
         author {
           id
           bio
@@ -355,8 +357,14 @@ export const query = graphql`
               ... on ImageSharp {
                 gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
               }
+            }
           }
+        }
       }
+      fields {
+        slug
+      }
+    }
     relatedPosts: allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
       limit: 3

@@ -1,4 +1,5 @@
 import { Link, StaticQuery, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import styled from '@emotion/styled';
 import * as _ from 'lodash';
@@ -164,7 +165,7 @@ export interface ReadNextProps {
 export interface ReadNextQuery {
   header: {
     childImageSharp: {
-      fluid: any;
+      gatsbyImageData: any;
     };
   };
 }
@@ -179,13 +180,16 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
               gatsbyImageData(width: 3720, placeholder: BLURRED)
-                
-              }
+            }
           }
+        }
       `}
       // tslint:disable-next-line:react-this-binding-issue
-      render={({ header }: ReadNextQuery) => (
-        <ReadNextCardStyles coverImage={header.childImageSharp.fluid.src}>
+      render={({ header }: ReadNextQuery) => {
+        const image = getImage(header);
+        const imageSrc = image?.images?.fallback?.src || '';
+        return (
+        <ReadNextCardStyles coverImage={imageSrc}>
           <ReadNextCardHeader>
             <ReadNextCardHeaderSitetitle>
               &mdash; {config.title} &mdash;
@@ -217,7 +221,8 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
             </Link>
           </ReadNextCardFooter>
         </ReadNextCardStyles>
-      )}
+        );
+      }}
     />
   );
 };

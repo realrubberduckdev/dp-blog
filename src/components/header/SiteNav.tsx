@@ -180,5 +180,6 @@ class SiteNav extends React.Component<SiteNavProps> {
       </nav>
     );
   }
+}
 
 export default SiteNav;

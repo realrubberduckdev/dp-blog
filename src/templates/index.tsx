@@ -190,8 +190,7 @@ export const pageQuery = graphql`
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
         gatsbyImageData(width: 200, placeholder: BLURRED)
-          gatsbyImageData(width: 200, placeholder: BLURRED)
-        }
+      }
     }
     header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
       childImageSharp {
@@ -199,6 +198,7 @@ export const pageQuery = graphql`
         # Makes it trivial to update as your page's design changes.
         gatsbyImageData(width: 2000, placeholder: BLURRED)
       }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       filter: { frontmatter: { draft: { ne: true } } },
@@ -217,6 +217,7 @@ export const pageQuery = graphql`
               childImageSharp {
                 gatsbyImageData(width: 3720, placeholder: BLURRED)
               }
+            }
             author {
               id
               bio
@@ -225,13 +226,18 @@ export const pageQuery = graphql`
                   ... on ImageSharp {
                     gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
                   }
+                }
               }
+            }
           }
           excerpt
+          timeToRead
           fields {
             layout
             slug
           }
+        }
       }
+    }
   }
 `;
