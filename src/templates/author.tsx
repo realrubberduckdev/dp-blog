@@ -303,15 +303,18 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
+                    gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
+                  }
                 }
+              }
             }
+          }
           fields {
             layout
             slug
           }
+        }
       }
+    }
   }
 `;
