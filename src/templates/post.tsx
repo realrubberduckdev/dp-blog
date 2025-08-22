@@ -124,7 +124,7 @@ interface PageTemplateProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: any;
+        gatsbyImageData: any;
       };
     };
     markdownRemark: {
@@ -138,7 +138,7 @@ interface PageTemplateProps {
         userDate: string;
         image: {
           childImageSharp: {
-            fluid: any;
+            gatsbyImageData: any;
           };
         };
         tags: string[];
@@ -147,7 +147,7 @@ interface PageTemplateProps {
           bio: string;
           avatar: {
             children: Array<{
-              fixed: {
+              gatsbyImageData: {
                 src: string;
               };
             }>;
@@ -185,7 +185,7 @@ export interface PageContext {
   frontmatter: {
     image: {
       childImageSharp: {
-        fluid: any;
+        gatsbyImageData: any;
       };
     };
     title: string;
@@ -196,11 +196,7 @@ export interface PageContext {
       id: string;
       bio: string;
       avatar: {
-        children: Array<{
-          fixed: {
-            src: string;
-          };
-        }>;
+        children: Array<any>;
       };
     };
   };
@@ -210,9 +206,11 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
   const post = props.data.markdownRemark;
   let width = '';
   let height = '';
-  if (post.frontmatter.image && post.frontmatter.image.childImageSharp) {
-    width = post.frontmatter.image.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
-    height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
+  if (post.frontmatter.image && post.frontmatter.image.childImageSharp && post.frontmatter.image.childImageSharp.gatsbyImageData) {
+    // For Gatsby 5, width and height are embedded in gatsbyImageData
+    const imageData = post.frontmatter.image.childImageSharp.gatsbyImageData;
+    width = String(imageData.width || '');
+    height = String(imageData.height || '');
   }
 
   return (
@@ -228,7 +226,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
         {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
-          <meta property="og:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
+          <meta property="og:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData?.images?.fallback?.src || ''}`} />
         )}
         <meta property="article:published_time" content={post.frontmatter.date} />
         {/* not sure if modified time possible */}
@@ -244,7 +242,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
         {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
-          <meta name="twitter:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
+          <meta name="twitter:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.gatsbyImageData?.images?.fallback?.src || ''}`} />
         )}
         <meta name="twitter:label1" content="Written by" />
         <meta name="twitter:data1" content={post.frontmatter.author.id} />
@@ -333,11 +331,8 @@ export const query = graphql`
   query($slug: String, $primaryTag: String) {
     logo: file(relativePath: { eq: "img/rubber-duck-logo.png" }) {
       childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 200, placeholder: BLURRED)
       }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       htmlAst
@@ -350,26 +345,18 @@ export const query = graphql`
         tags
         image {
           childImageSharp {
-            fluid(maxWidth: 3720) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 3720, placeholder: BLURRED)
           }
-        }
         author {
           id
           bio
           avatar {
             children {
               ... on ImageSharp {
-                fixed(quality: 90) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
               }
-            }
           }
-        }
       }
-    }
     relatedPosts: allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
       limit: 3
@@ -386,8 +373,6 @@ export const query = graphql`
           fields {
             slug
           }
-        }
       }
-    }
   }
 `;

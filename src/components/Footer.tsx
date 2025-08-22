@@ -62,7 +62,6 @@ const SiteFooterNav = styled.nav`
     a:first-child {
       margin-left: 0;
     }
-  }
 `;
 
 const Footer: React.FC = () => {

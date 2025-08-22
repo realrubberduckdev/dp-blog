@@ -207,7 +207,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           <PostCardImage className="post-card-image">
             {post.frontmatter.image &&
               post.frontmatter.image.childImageSharp &&
-              post.frontmatter.image.childImageSharp.fluid && (
+              post.frontmatter.image.childImageSharp.gatsbyImageData && (
               <GatsbyImage
                 alt={`${post.frontmatter.title} cover image`}
                 style={{ height: '100%' }}
@@ -248,7 +248,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               {post.frontmatter.author && (
                 <Link css={StaticAvatar} to={`/author/${_.kebabCase(post.frontmatter.author.id)}/`}>
                   <AuthorProfileImage
-                    src={post.frontmatter.author.avatar?.children?.[0]?.fixed?.src || ''}
+                    src={
+                      post.frontmatter.author.avatar?.children?.[0]?.gatsbyImageData?.src || 
+                      post.frontmatter.author.avatar?.children?.[0]?.gatsbyImageData?.images?.fallback?.src || 
+                      ''
+                    }
                     alt={post.frontmatter.author.id}
                   />
                 </Link>

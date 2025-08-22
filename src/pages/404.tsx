@@ -110,10 +110,9 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
+                gatsbyImageData(width: 3720, placeholder: BLURRED)
+                  
                 }
-              }
             }
             author {
               id
@@ -124,18 +123,13 @@ export const pageQuery = graphql`
                     fixed(quality: 90) {
                       src
                     }
-                  }
                 }
-              }
             }
-          }
           excerpt
           fields {
             layout
             slug
           }
-        }
       }
-    }
   }
 `;

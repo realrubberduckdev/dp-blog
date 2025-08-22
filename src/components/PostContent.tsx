@@ -118,7 +118,6 @@ export const PostFullContent = styled.section`
     video {
       width: 100%;
     }
-  }
 
   img[src$='#full'] {
     max-width: none;
@@ -238,7 +237,6 @@ export const PostFullContent = styled.section`
     h1 {
       font-size: 2.8rem;
     }
-  }
 
   h2 {
     margin: 0.5em 0 0.2em 0;
@@ -249,7 +247,6 @@ export const PostFullContent = styled.section`
     h2 {
       font-size: 2.6rem;
     }
-  }
 
   h3 {
     margin: 0.5em 0 0.2em 0;
@@ -260,7 +257,6 @@ export const PostFullContent = styled.section`
     h3 {
       font-size: 2.2rem;
     }
-  }
 
   h4 {
     margin: 0.5em 0 0.2em 0;
@@ -271,7 +267,6 @@ export const PostFullContent = styled.section`
     h4 {
       font-size: 2.2rem;
     }
-  }
 
   h5 {
     display: block;
@@ -288,13 +283,11 @@ export const PostFullContent = styled.section`
     h5 {
       max-width: 1060px;
     }
-  }
   @media (max-width: 500px) {
     h5 {
       padding: 0 0 0.5em;
       font-size: 2.2rem;
     }
-  }
 
   h6 {
     margin: 0.5em 0 0.2em 0;
@@ -305,7 +298,6 @@ export const PostFullContent = styled.section`
     h6 {
       font-size: 2rem;
     }
-  }
 
   /* Tables */
   table {
@@ -380,7 +372,6 @@ export const PostFullContent = styled.section`
     :after {
       display: none;
     }
-  }
 
   /* Start Syntax Highlighting */
   /* Taken from overreacted https://github.com/gaearon/overreacted.io/blob/942b41555f5e5ccbb5f93f6c26142cd90b314236/src/utils/global.css#L68 */
@@ -535,7 +526,6 @@ export const PostFullContent = styled.section`
     .gatsby-highlight {
       border-radius: 0;
     }
-  }
 
   .gatsby-highlight pre[class*='language-'] {
     float: left;

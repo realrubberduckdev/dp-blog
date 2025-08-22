@@ -29,7 +29,7 @@ const SiteNavLogoStyles = css`
 interface SiteNavLogoProps {
   logo?: {
     childImageSharp: {
-      fixed: any;
+      gatsbyImageData: any;
     };
   };
 }
@@ -40,9 +40,7 @@ const SiteNavLogo = () => (
       query HeadingQuery {
         logo: file(relativePath: { eq: "img/rubber-duck-logo.png" }) {
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 200, placeholder: BLURRED)
           }
         }
       }
@@ -51,7 +49,7 @@ const SiteNavLogo = () => (
     render={(data: SiteNavLogoProps) => (
       <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
         {data.logo ? (
-          <img src={data.logo.childImageSharp.fixed.src} alt={config.title} />
+          <img src={data.logo.childImageSharp.gatsbyImageData?.images?.fallback?.src || data.logo.childImageSharp.gatsbyImageData?.src || ''} alt={config.title} />
         ) : (
           config.title
         )}

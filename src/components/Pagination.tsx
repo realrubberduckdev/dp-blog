@@ -44,7 +44,6 @@ const navCss = css`
     &:hover {
       text-decoration: none;
     }
-  }
 `;
 
 const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, numPages }) => {

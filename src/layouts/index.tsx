@@ -434,7 +434,6 @@ const GlobalStyles = css`
     h1 {
       font-size: 2.2rem;
     }
-  }
 
   h2 {
     margin: 1.5em 0 0.5em 0;
@@ -444,7 +443,6 @@ const GlobalStyles = css`
     h2 {
       font-size: 1.8rem;
     }
-  }
 
   h3 {
     margin: 1.5em 0 0.5em 0;
@@ -455,7 +453,6 @@ const GlobalStyles = css`
     h3 {
       font-size: 1.7rem;
     }
-  }
 
   h4 {
     margin: 1.5em 0 0.5em 0;

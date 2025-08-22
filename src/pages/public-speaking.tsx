@@ -22,7 +22,6 @@ const PageTemplate = css`
     margin-right: 0;
     margin-bottom: 0;
   }
-}
 `;
 
 const PublicSpeaking: React.FC = () => (

@@ -39,7 +39,6 @@ const SubscribeFormSection = styled.section`
     p {
       font-size: 1.6rem;
     }
-  }
 `;
 
 const SubscribeFormTitle = css`

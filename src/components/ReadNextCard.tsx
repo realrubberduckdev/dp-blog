@@ -178,12 +178,10 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
-              fluid(maxWidth: 2000) {
-                ...GatsbyImageSharpFluid
+              gatsbyImageData(width: 3720, placeholder: BLURRED)
+                
               }
-            }
           }
-        }
       `}
       // tslint:disable-next-line:react-this-binding-issue
       render={({ header }: ReadNextQuery) => (

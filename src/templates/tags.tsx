@@ -36,7 +36,7 @@ interface TagTemplateProps {
           description: string;
           image?: {
             childImageSharp: {
-              fluid: any;
+              gatsbyImageData: any;
             };
           };
         };
@@ -91,7 +91,7 @@ const Tags: React.FC<TagTemplateProps> = props => {
           style={{
             backgroundImage:
               tagData && tagData.node.image ?
-                `url('${tagData.node.image.childImageSharp.fluid.src}')` :
+                `url('${tagData.node.image.childImageSharp.gatsbyImageData?.images?.fallback?.src || tagData.node.image.childImageSharp.gatsbyImageData?.src || ''}')` :
                 '',
           }}
         >
@@ -139,9 +139,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 3720) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 3720, placeholder: BLURRED)
             }
           }
         }
@@ -163,9 +161,7 @@ export const pageQuery = graphql`
             date
             image {
               childImageSharp {
-                fluid(maxWidth: 1240) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720, placeholder: BLURRED)
               }
             }
             author {
@@ -174,9 +170,7 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
+                    gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
                   }
                 }
               }

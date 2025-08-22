@@ -196,6 +196,5 @@ class SubscribeModal extends React.Component<any, SubscribeState> {
       </SubscribeOverlay>
     );
   }
-}
 
 export default SubscribeModal;

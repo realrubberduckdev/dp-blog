@@ -63,7 +63,6 @@ const HomePosts = css`
     .post-card:nth-of-type(6n + 1):not(.no-image) .post-card-meta {
       padding: 0 40px 30px;
     }
-  }
 `;
 
 export interface IndexProps {
@@ -74,12 +73,12 @@ export interface IndexProps {
   data: {
     logo: {
       childImageSharp: {
-        fixed: any;
+        gatsbyImageData: any;
       };
     };
     header: {
       childImageSharp: {
-        fluid: any;
+        gatsbyImageData: any;
       };
     };
     allMarkdownRemark: {
@@ -91,8 +90,14 @@ export interface IndexProps {
 }
 
 const IndexPage: React.FC<IndexProps> = props => {
-  const width = props.data.header.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
-  const height = String(Number(width) / props.data.header.childImageSharp.fluid.aspectRatio);
+  let width = '';
+  let height = '';
+  if (props.data.header.childImageSharp && props.data.header.childImageSharp.gatsbyImageData) {
+    // For Gatsby 5, width and height are embedded in gatsbyImageData
+    const imageData = props.data.header.childImageSharp.gatsbyImageData;
+    width = String(imageData.width || '');
+    height = String(imageData.height || '');
+  }
 
   return (
     <IndexLayout css={HomePosts}>
@@ -107,7 +112,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images?.fallback?.src || ''}`}
         />
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.googleSiteVerification && <meta name="google-site-verification" content={config.googleSiteVerification} />}
@@ -117,7 +122,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta name="twitter:url" content={config.siteUrl} />
         <meta
           name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
+          content={`${config.siteUrl}${props.data.header.childImageSharp.gatsbyImageData?.images?.fallback?.src || ''}`}
         />
         {config.twitter && (
           <meta
@@ -132,7 +137,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <header
           css={[outer, SiteHeader]}
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fluid.src}')`,
+            backgroundImage: `url('${props.data.header.childImageSharp.gatsbyImageData?.images?.fallback?.src || ''}')`,
           }}
         >
           <div css={inner}>
@@ -141,7 +146,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 {props.data.logo ? (
                   <img
                     style={{ maxHeight: '45px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
+                    src={props.data.logo.childImageSharp.gatsbyImageData?.images?.fallback?.src || props.data.logo.childImageSharp.gatsbyImageData?.src || ''}
                     alt={config.title}
                   />
                 ) : (
@@ -184,20 +189,16 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed {
-          ...GatsbyImageSharpFixed
+        gatsbyImageData(width: 200, placeholder: BLURRED)
+          gatsbyImageData(width: 200, placeholder: BLURRED)
         }
-      }
     }
     header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 2000, placeholder: BLURRED)
       }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       filter: { frontmatter: { draft: { ne: true } } },
@@ -214,32 +215,23 @@ export const pageQuery = graphql`
             draft
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720, placeholder: BLURRED)
               }
-            }
             author {
               id
               bio
               avatar {
                 children {
                   ... on ImageSharp {
-                    fixed(quality: 90) {
-                      src
-                    }
+                    gatsbyImageData(width: 90, height: 90, placeholder: BLURRED)
                   }
-                }
               }
-            }
           }
           excerpt
           fields {
             layout
             slug
           }
-        }
       }
-    }
   }
 `;

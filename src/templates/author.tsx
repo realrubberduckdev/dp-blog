@@ -272,18 +272,12 @@ export const pageQuery = graphql`
       location
       profile_image {
         childImageSharp {
-          fluid(maxWidth: 3720) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 3720, placeholder: BLURRED)
         }
-      }
       avatar {
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 200, placeholder: BLURRED)
         }
-      }
     }
     allMarkdownRemark(
       filter: { frontmatter: { draft: { ne: true } } },
@@ -301,11 +295,8 @@ export const pageQuery = graphql`
             draft
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 3720, placeholder: BLURRED)
               }
-            }
             author {
               id
               bio
@@ -315,17 +306,12 @@ export const pageQuery = graphql`
                     fixed(quality: 90) {
                       src
                     }
-                  }
                 }
-              }
             }
-          }
           fields {
             layout
             slug
           }
-        }
       }
-    }
   }
 `;
