@@ -145,3 +145,24 @@ export const AuthorProfileImage = css`
   width: 60px;
   height: 60px;
 `;
+
+// SEO Hidden Content - Visually hidden but accessible to search engines
+export const seoHidden = css`
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
+
+// Alternative SEO hidden approach - completely hidden from visual and screen readers
+export const visuallyHidden = css`
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`;

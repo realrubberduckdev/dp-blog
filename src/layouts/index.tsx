@@ -473,9 +473,29 @@ const GlobalStyles = css`
     font-size: 1.4rem;
     font-weight: 500;
   }
-
   body {
     background: #f4f8fb;
+  }
+
+  /* SEO Hidden Content - Visually hidden but accessible to search engines */
+  .seo-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* Alternative SEO hidden approach - screen reader accessible */
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 `;
 
