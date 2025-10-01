@@ -8,6 +8,8 @@ tags: ["Git", "AzureDevOps", "All"]
 draft: false
 ---
 
+Special thanks to my fantastic colleague [Fatih Kucukkara](https://www.linkedin.com/in/fatih-kucukkara-msc-0b480057/) for helping figure these details out.
+
 ## 🧩 What They Are and How to Fix Them
 
 If you've ever pushed a branch to Azure DevOps and been greeted with a cryptic error like this:
