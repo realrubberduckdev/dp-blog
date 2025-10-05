@@ -173,3 +173,5 @@ These applications demonstrate how multi-agent systems can tackle complex, nuanc
 Multi-agent AI systems represent a maturation of AI application development, moving beyond monolithic AI interactions toward specialized, maintainable, and scalable architectures. By leveraging tools like Microsoft Semantic Kernel and embracing the multi-agent paradigm, developers can create applications that are not only more capable but also more reliable and easier to maintain.
 
 Whether you're building content generation tools, data analysis pipelines, or complex decision support systems, the multi-agent approach offers a pathway to more sophisticated and maintainable AI applications.
+
+Please note, I have [this old branch using Semantic Kernel](https://github.com/realrubberduckdev/blog-gen/tree/old-semantic-kernel-implementation) for reference if anyone is interested. The repo has now moved to use [Microsoft Agent Framework](https://github.com/microsoft/agent-framework).
