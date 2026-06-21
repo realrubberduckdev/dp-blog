@@ -5,7 +5,7 @@ Blog site https://rubberduckdev.com/
 This is a static blog generator and starter gatsby repo. A port of [Casper](https://github.com/TryGhost/Casper) v2 a theme from [Ghost](https://ghost.org/) for [GatsbyJS](https://www.gatsbyjs.org/) using [TypeScript](https://www.typescriptlang.org/).
 
 ## Local build
-
+<!--  -->
 ### One time installs
 Ignore if already installed.
 
@@ -32,6 +32,16 @@ docker build -t myproject/website .
 docker run --rm -p 80:80 myproject/website
 # Open your browser at http://localhost
 ```
+
+## Blog Post Workflow
+
+1. `/generate-blog-post` with rough notes → creates draft
+2. `/review-blog-post` with file path → get feedback
+3. Fix issues from the review
+4. `/optimise-seo` with file path → polish for search engines
+5. Run `gatsby develop` and preview
+
+Also available: `/write-blog-post` to write a post from a topic (without rough notes).
 
 ## How to edit your site title and description
 Edit `gatsby-config.js` section `siteMetadata`
