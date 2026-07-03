@@ -193,11 +193,9 @@ A single pipeline gives everyone a shared view without needing extra reports or 
 
 ## Why This Aligns with Human Behaviour
 
-There is also a human side to this design choice. People generally work better when they can follow a single visible journey instead of mentally stitching together multiple disconnected processes.
+There is also a human side to this design choice: people work better when they can follow one visible journey instead of mentally stitching together disconnected processes. A multi-stage pipeline supports that by giving a release one clear path from build to production.
 
 Every handoff adds cognitive load. Every disconnected system increases context switching. Every missing link creates another place where information can be lost or misunderstood.
-
-A multi-stage pipeline works because it gives the release one visible path from build to production.
 
 ### Real-world examples
 
@@ -299,4 +297,4 @@ A single multi-stage pipeline aligns well with modern DevOps delivery because it
 
 Multiple pipelines still have valid uses when components have independent ownership or independent release cadences. But for most application delivery workflows, consolidating the lifecycle into one multi-stage pipeline creates a more reliable and transparent release process.
 
-The outcome is not just fewer pipelines. It is a delivery model that is easier to audit, easier to operate, and easier to trust.
+The outcome is not just fewer pipelines. It is a delivery model that is easier to audit, easier to operate, and easier to trust. It also reduces the cognitive load of release management by giving everyone one visible journey to follow.
