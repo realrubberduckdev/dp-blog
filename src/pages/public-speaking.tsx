@@ -51,6 +51,18 @@ const PublicSpeaking: React.FC = () => (
                 or event happening, do let me know, I will try to join in to listen.
                 <br />
                 <br />
+                <h2>2026</h2>
+                <ul>
+                  <li>
+                      Where lies the security perimiter? - Deconstructing Team PCP CI/CD Supply Chain Cascades
+                  </li>
+                </ul>
+                <h2>2025</h2>
+                <ul>
+                  <li>
+                      Strongly Typed Opinions Generating Blogs with .NET and Too Many Agents - Microsoft Agent Framework
+                  </li>
+                </ul>
                 <h2>2023</h2>
                 <ul>
                   <li>
