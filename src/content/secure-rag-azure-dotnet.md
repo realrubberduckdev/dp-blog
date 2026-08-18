@@ -35,13 +35,23 @@ The key insight: the LLM **never** sees documents the user shouldn't access. Sec
 
 ## Architecture Overview
 
-```mermaid
-flowchart TD
-    A[User Query] --> B[Resolve User Groups<br/>via Entra ID]
-    B --> C[Vector Search + Security Filter<br/>in Azure AI Search]
-    C --> D[Authorized Chunks Only]
-    D --> E[Azure OpenAI<br/>Chat Completion]
-    E --> F[Answer with Citations]
+```
+User Query
+    │
+    ▼
+Resolve User Groups (Entra ID)
+    │
+    ▼
+Vector Search + Security Filter (Azure AI Search)
+    │
+    ▼
+Authorized Chunks Only
+    │
+    ▼
+Azure OpenAI Chat Completion
+    │
+    ▼
+Answer with Citations
 ```
 
 | Step | What Happens | Azure Service |
